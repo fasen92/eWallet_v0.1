@@ -6,7 +6,36 @@
 	android:layout_height="match_parent"
 	android:minWidth="25px"
 	android:minHeight="25px">
-	
+	<TextView
+		android:text="Obchod"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/txtObchod"
+		android:textSize="24sp" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtCena"
+		android:hint="Zadaj obchod"
+		android:textSize="20sp" 
+		/>
+	<TextView
+		android:text="Vydaje"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/txtVydaj"
+		android:textSize="24sp" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtCena"
+		android:hint="Zadaj cenu v EUR"
+		android:inputType="none|number|numberDecimal"
+		android:textSize="20sp" />
 
 
 </LinearLayout>
