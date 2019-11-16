@@ -2737,8 +2737,8 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d0037
 			public const int SYM = 2131558455;
 			
-			// aapt resource value: 0x7f0d00bb
-			public const int action0 = 2131558587;
+			// aapt resource value: 0x7f0d00bd
+			public const int action0 = 2131558589;
 			
 			// aapt resource value: 0x7f0d007c
 			public const int action_bar = 2131558524;
@@ -2761,17 +2761,17 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d005a
 			public const int action_bar_title = 2131558490;
 			
-			// aapt resource value: 0x7f0d00b8
-			public const int action_container = 2131558584;
+			// aapt resource value: 0x7f0d00ba
+			public const int action_container = 2131558586;
 			
 			// aapt resource value: 0x7f0d007d
 			public const int action_context_bar = 2131558525;
 			
-			// aapt resource value: 0x7f0d00bf
-			public const int action_divider = 2131558591;
+			// aapt resource value: 0x7f0d00c1
+			public const int action_divider = 2131558593;
 			
-			// aapt resource value: 0x7f0d00b9
-			public const int action_image = 2131558585;
+			// aapt resource value: 0x7f0d00bb
+			public const int action_image = 2131558587;
 			
 			// aapt resource value: 0x7f0d0003
 			public const int action_menu_divider = 2131558403;
@@ -2788,11 +2788,11 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d005c
 			public const int action_mode_close_button = 2131558492;
 			
-			// aapt resource value: 0x7f0d00ba
-			public const int action_text = 2131558586;
+			// aapt resource value: 0x7f0d00bc
+			public const int action_text = 2131558588;
 			
-			// aapt resource value: 0x7f0d00c8
-			public const int actions = 2131558600;
+			// aapt resource value: 0x7f0d00ca
+			public const int actions = 2131558602;
 			
 			// aapt resource value: 0x7f0d005d
 			public const int activity_chooser_view_content = 2131558493;
@@ -2824,11 +2824,14 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d003d
 			public const int bottom = 2131558461;
 			
+			// aapt resource value: 0x7f0d00b9
+			public const int btnDatum = 2131558585;
+			
 			// aapt resource value: 0x7f0d0063
 			public const int buttonPanel = 2131558499;
 			
-			// aapt resource value: 0x7f0d00bc
-			public const int cancel_action = 2131558588;
+			// aapt resource value: 0x7f0d00be
+			public const int cancel_action = 2131558590;
 			
 			// aapt resource value: 0x7f0d0045
 			public const int center = 2131558469;
@@ -2851,8 +2854,8 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d0073
 			public const int checkbox = 2131558515;
 			
-			// aapt resource value: 0x7f0d00c4
-			public const int chronometer = 2131558596;
+			// aapt resource value: 0x7f0d00c6
+			public const int chronometer = 2131558598;
 			
 			// aapt resource value: 0x7f0d004e
 			public const int clip_horizontal = 2131558478;
@@ -2908,8 +2911,8 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d0030
 			public const int end = 2131558448;
 			
-			// aapt resource value: 0x7f0d00ca
-			public const int end_padder = 2131558602;
+			// aapt resource value: 0x7f0d00cc
+			public const int end_padder = 2131558604;
 			
 			// aapt resource value: 0x7f0d003f
 			public const int enterAlways = 2131558463;
@@ -2953,8 +2956,8 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d0062
 			public const int icon = 2131558498;
 			
-			// aapt resource value: 0x7f0d00c9
-			public const int icon_group = 2131558601;
+			// aapt resource value: 0x7f0d00cb
+			public const int icon_group = 2131558603;
 			
 			// aapt resource value: 0x7f0d003a
 			public const int ifRoom = 2131558458;
@@ -2962,8 +2965,8 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d005f
 			public const int image = 2131558495;
 			
-			// aapt resource value: 0x7f0d00c5
-			public const int info = 2131558597;
+			// aapt resource value: 0x7f0d00c7
+			public const int info = 2131558599;
 			
 			// aapt resource value: 0x7f0d0059
 			public const int italic = 2131558489;
@@ -2989,14 +2992,14 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d0061
 			public const int list_item = 2131558497;
 			
+			// aapt resource value: 0x7f0d00cf
+			public const int masked = 2131558607;
+			
+			// aapt resource value: 0x7f0d00c0
+			public const int media_actions = 2131558592;
+			
 			// aapt resource value: 0x7f0d00cd
-			public const int masked = 2131558605;
-			
-			// aapt resource value: 0x7f0d00be
-			public const int media_actions = 2131558590;
-			
-			// aapt resource value: 0x7f0d00cb
-			public const int message = 2131558603;
+			public const int message = 2131558605;
 			
 			// aapt resource value: 0x7f0d0031
 			public const int middle = 2131558449;
@@ -3091,17 +3094,17 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d001e
 			public const int normal = 2131558430;
 			
-			// aapt resource value: 0x7f0d00c7
-			public const int notification_background = 2131558599;
+			// aapt resource value: 0x7f0d00c9
+			public const int notification_background = 2131558601;
 			
-			// aapt resource value: 0x7f0d00c1
-			public const int notification_main_column = 2131558593;
+			// aapt resource value: 0x7f0d00c3
+			public const int notification_main_column = 2131558595;
 			
-			// aapt resource value: 0x7f0d00c0
-			public const int notification_main_column_container = 2131558592;
+			// aapt resource value: 0x7f0d00c2
+			public const int notification_main_column_container = 2131558594;
 			
-			// aapt resource value: 0x7f0d00ce
-			public const int novyNakup = 2131558606;
+			// aapt resource value: 0x7f0d00d0
+			public const int novyNakup = 2131558608;
 			
 			// aapt resource value: 0x7f0d004c
 			public const int parallax = 2131558476;
@@ -3127,11 +3130,11 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d004a
 			public const int right = 2131558474;
 			
-			// aapt resource value: 0x7f0d00c6
-			public const int right_icon = 2131558598;
+			// aapt resource value: 0x7f0d00c8
+			public const int right_icon = 2131558600;
 			
-			// aapt resource value: 0x7f0d00c2
-			public const int right_side = 2131558594;
+			// aapt resource value: 0x7f0d00c4
+			public const int right_side = 2131558596;
 			
 			// aapt resource value: 0x7f0d000c
 			public const int save_image_matrix = 2131558412;
@@ -3235,8 +3238,8 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d004b
 			public const int start = 2131558475;
 			
-			// aapt resource value: 0x7f0d00bd
-			public const int status_bar_latest_event_content = 2131558589;
+			// aapt resource value: 0x7f0d00bf
+			public const int status_bar_latest_event_content = 2131558591;
 			
 			// aapt resource value: 0x7f0d0076
 			public const int submenuarrow = 2131558518;
@@ -3271,8 +3274,8 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d0015
 			public const int textinput_error = 2131558421;
 			
-			// aapt resource value: 0x7f0d00c3
-			public const int time = 2131558595;
+			// aapt resource value: 0x7f0d00c5
+			public const int time = 2131558597;
 			
 			// aapt resource value: 0x7f0d001c
 			public const int title = 2131558428;
@@ -3310,6 +3313,9 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d00b6
 			public const int txtCena = 2131558582;
 			
+			// aapt resource value: 0x7f0d00b8
+			public const int txtDatum = 2131558584;
+			
 			// aapt resource value: 0x7f0d00b5
 			public const int txtObchod = 2131558581;
 			
@@ -3328,8 +3334,8 @@ namespace ewallet_v0._1._13
 			// aapt resource value: 0x7f0d0016
 			public const int view_offset_helper = 2131558422;
 			
-			// aapt resource value: 0x7f0d00cc
-			public const int visible = 2131558604;
+			// aapt resource value: 0x7f0d00ce
+			public const int visible = 2131558606;
 			
 			// aapt resource value: 0x7f0d00ad
 			public const int volume_item_container = 2131558573;

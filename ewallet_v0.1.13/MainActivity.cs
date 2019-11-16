@@ -74,7 +74,7 @@ namespace ewallet_v0._1._13
             switch (item.ItemId)
             {
                 case Resource.Id.novyNakup:
-                    nakupActivity.startActivity(this);
+                    NakupActivity.startActivity(this);
                     return true;
                 case Resource.Id.info:
                     

@@ -36,6 +36,17 @@
 		android:hint="Zadaj cenu v EUR"
 		android:inputType="none|number|numberDecimal"
 		android:textSize="20sp" />
+	<TextView
+		android:text="Dátum"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/txtDatum"
+		android:textSize="24sp" />
+	<Button
+		android:text="klikni pre zadanie dátumu "
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnDatum"/>
 
 
 </LinearLayout>
