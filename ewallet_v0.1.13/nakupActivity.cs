@@ -20,6 +20,7 @@ namespace ewallet_v0._1._13
         private int rok, mesiac, den;
         Button btnDatum;
         TextView txtDatum;
+        
 
         public static void startActivity(Context context)
         {
@@ -33,6 +34,7 @@ namespace ewallet_v0._1._13
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            AktualnyDatum();
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.nakup_activity_layout);
@@ -49,6 +51,16 @@ namespace ewallet_v0._1._13
             {
                 ShowDialog(DATE_DIALOG);
             };
+        }
+
+        //nastavi aktualny datum
+        public void AktualnyDatum()
+        {
+            den = int.Parse(DateTime.Now.ToString("dd"));
+            mesiac = int.Parse(DateTime.Now.ToString("MM"));
+            mesiac = mesiac - 1;
+            rok = int.Parse(DateTime.Now.ToString("yyyy"));
+           
         }
 
         protected override Dialog OnCreateDialog(int id)
@@ -87,7 +99,7 @@ namespace ewallet_v0._1._13
             rok = year;
             mesiac = month;
             den = dayOfMonth;
-            txtDatum.Text = "Zvolili ste: " + den + "." + (mesiac+1) + "." + rok;
+            txtDatum.Text = "Dátum: " + den + "." + (mesiac+1) + "." + rok;
         }
     }
 }

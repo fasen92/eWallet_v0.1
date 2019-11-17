@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ewallet_v0.1.13", "ewallet_v0.1.13\ewallet_v0.1.13.csproj", "{1E976A27-9E84-4769-BA3C-C4407A541B05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eWallet", "ewallet_v0.1.13\eWallet.csproj", "{1E976A27-9E84-4769-BA3C-C4407A541B05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
