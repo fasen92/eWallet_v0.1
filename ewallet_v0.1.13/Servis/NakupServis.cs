@@ -20,6 +20,7 @@ namespace ewallet_v0._1._13.Servis
         private static NakupServis instance;
 
         string nakupySave;
+        string nakupyLoad;
 
         private List<Nakup> nakupList;
         
@@ -39,15 +40,38 @@ namespace ewallet_v0._1._13.Servis
         {
             nakupList = new List<Nakup>();
             //developing
+            nakupyLoad = nakupLoad();
             nakupList = JsonConvert.DeserializeObject<List<Nakup>>(nakupySave);
         }
 
         public void ulozNakupList(List<Nakup> nakupList)
         {
             nakupySave = JsonConvert.SerializeObject(nakupList, Formatting.Indented);
-            ISharedPreferences pref = Application.Context.GetSharedPreferences("nakupList", FileCreationMode.Private);
+            ISharedPreferences pref = Application.Context.GetSharedPreferences("nakupListSave", FileCreationMode.Private);
             ISharedPreferencesEditor edit = pref.Edit();
             edit.PutString("jsonNakup", nakupySave);
+            edit.Apply();
+        }
+
+        public bool nacitajNakup()
+        {
+            string nakupyLoad = nakupLoad();
+            if(nakupyLoad == String.Empty)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        
+        }
+
+        public string nakupLoad()
+        {
+            ISharedPreferences pref = Application.Context.GetSharedPreferences("nakupListSave", FileCreationMode.Private);
+            nakupyLoad = pref.GetString("nakupListSave", String.Empty);
+            return nakupyLoad;
         }
 
         public void pridajNakup(Nakup novyNakup)

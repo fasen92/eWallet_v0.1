@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using ewallet_v0._1._13.Model;
+using ewallet_v0._1._13.Servis;
 
 namespace ewallet_v0._1._13
 {
@@ -19,7 +21,11 @@ namespace ewallet_v0._1._13
         private const int DATE_DIALOG = 1;
         private int rok, mesiac, den;
         Button btnDatum;
+        Button btnSave;
+        EditText txtVydaj;
+        EditText txtObchod;
         TextView txtDatum;
+        
         
 
         public static void startActivity(Context context)
@@ -44,7 +50,11 @@ namespace ewallet_v0._1._13
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             btnDatum = FindViewById<Button>(Resource.Id.btnDatum);
+            btnSave = FindViewById<Button>(Resource.Id.btnSave);
+            txtObchod = FindViewById<EditText>(Resource.Id.txtObchod);
+            txtVydaj = FindViewById<EditText>(Resource.Id.txtCena);
             txtDatum = FindViewById<TextView>(Resource.Id.txtDatum);
+
 
             //button cez ktorý otvoríme dialog na dátum
             btnDatum.Click += delegate
@@ -52,6 +62,24 @@ namespace ewallet_v0._1._13
 #pragma warning disable CS0618 // Type or member is obsolete
                 ShowDialog(DATE_DIALOG);
 #pragma warning restore CS0618 // Type or member is obsolete
+            };
+
+            btnSave.Click += delegate
+            {
+                if (txtObchod.Text == "")
+                {
+                    Toast.MakeText(this, "Názov obchodu nebol zadaný, prosím zadajte názov obchodu.", ToastLength.Long).Show();
+
+                } else if(txtVydaj.Text == "")
+                {
+                    Toast.MakeText(this, "Cena nákupu nebola zadaná, prosím zadajte cenu nákupu.", ToastLength.Long).Show();
+                }
+                else
+                {
+                    ulozit();
+                }
+
+               
             };
         }
 
@@ -104,6 +132,19 @@ namespace ewallet_v0._1._13
             mesiac = month;
             den = dayOfMonth;
             txtDatum.Text = "Dátum: " + den + "." + (mesiac+1) + "." + rok;
+        }
+
+        //ulozenie do objektu
+        private void ulozit()
+        {
+            string obchodNakupu = txtObchod.Text;
+            double vydajNakupu = double.Parse(txtVydaj.Text);
+            int denNakupu = den;
+            int mesiacNakupu = mesiac;
+            int rokNakupu = rok;
+
+            Nakup nakup = new Nakup(obchodNakupu, vydajNakupu, den, mesiac, rok);
+            NakupServis.getInstance().pridajNakup(nakup);
         }
     }
 }

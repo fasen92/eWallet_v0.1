@@ -10,14 +10,14 @@
 		android:text="Obchod"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/txtObchod"
+		android:id="@+id/txtObchodNazov"
 		android:textSize="24sp" />
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:minWidth="25px"
 		android:minHeight="25px"
-		android:id="@+id/txtCena"
+		android:id="@+id/txtObchod"
 		android:hint="Zadaj obchod"
 		android:textSize="20sp" 
 		/>
@@ -47,6 +47,10 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/btnDatum"/>
-
+	<Button
+		android:text="Uložiť nákup"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnSave"/>
 
 </LinearLayout>

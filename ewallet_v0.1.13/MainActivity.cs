@@ -16,7 +16,7 @@ namespace ewallet_v0._1._13
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : AppCompatActivity
     {
-        
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -25,9 +25,9 @@ namespace ewallet_v0._1._13
             SetContentView(Resource.Layout.activity_main);
 
 
-        //test grafov
-        var entries = new[]
-            {
+            //test grafov
+            var entries = new[]
+                {
                 new Entry(200)
                 {
                     Label = "January",
@@ -59,7 +59,7 @@ namespace ewallet_v0._1._13
             var chartView2 = FindViewById<ChartView>(Resource.Id.chartView2);
             chartView2.Chart = chart2;
 
-            
+
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -77,7 +77,7 @@ namespace ewallet_v0._1._13
                     NakupActivity.startActivity(this);
                     return true;
                 case Resource.Id.info:
-                    
+
                     return true;
             }
             return base.OnOptionsItemSelected(item);
