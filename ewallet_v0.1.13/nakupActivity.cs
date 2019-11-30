@@ -49,7 +49,9 @@ namespace ewallet_v0._1._13
             //button cez ktorý otvoríme dialog na dátum
             btnDatum.Click += delegate
             {
+#pragma warning disable CS0618 // Type or member is obsolete
                 ShowDialog(DATE_DIALOG);
+#pragma warning restore CS0618 // Type or member is obsolete
             };
         }
 
@@ -63,7 +65,9 @@ namespace ewallet_v0._1._13
            
         }
 
+#pragma warning disable CS0672 // Member overrides obsolete member
         protected override Dialog OnCreateDialog(int id)
+#pragma warning restore CS0672 // Member overrides obsolete member
         {
             //dialog na zadanie datumu
             switch (id)
