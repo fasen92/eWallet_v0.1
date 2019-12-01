@@ -35,7 +35,8 @@
 		android:id="@+id/txtCena"
 		android:hint="Zadaj cenu v EUR"
 		android:inputType="none|number|numberDecimal"
-		android:textSize="20sp" />
+		android:textSize="20sp"
+		android:numeric="decimal|integer" />
 	<TextView
 		android:text="Dátum"
 		android:layout_width="match_parent"

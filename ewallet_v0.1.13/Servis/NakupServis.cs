@@ -39,9 +39,12 @@ namespace ewallet_v0._1._13.Servis
         private NakupServis()
         {
             nakupList = new List<Nakup>();
-            //developing
-            nakupyLoad = nakupLoad();
-            nakupList = JsonConvert.DeserializeObject<List<Nakup>>(nakupySave);
+            if (nacitajNakup())
+            {
+                nakupyLoad = nakupLoad();
+                nakupList = JsonConvert.DeserializeObject<List<Nakup>>(nakupySave);
+            }
+            
         }
 
         public void ulozNakupList(List<Nakup> nakupList)
@@ -58,11 +61,11 @@ namespace ewallet_v0._1._13.Servis
             string nakupyLoad = nakupLoad();
             if(nakupyLoad == String.Empty)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         
         }

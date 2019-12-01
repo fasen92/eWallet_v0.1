@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -138,7 +139,7 @@ namespace ewallet_v0._1._13
         private void ulozit()
         {
             string obchodNakupu = txtObchod.Text;
-            double vydajNakupu = double.Parse(txtVydaj.Text);
+            double vydajNakupu = double.Parse(txtVydaj.Text, CultureInfo.InvariantCulture);
             int denNakupu = den;
             int mesiacNakupu = mesiac;
             int rokNakupu = rok;
