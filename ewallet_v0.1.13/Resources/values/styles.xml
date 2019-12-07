@@ -7,6 +7,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="dialog_animacia">
+      <item name="android:windowEnterAnimation">@anim/slide_up</item>
+      <item name="android:windowExitAnimation">@anim/slide_right</item>
+    </style>
   
   
 

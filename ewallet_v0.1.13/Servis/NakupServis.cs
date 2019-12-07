@@ -42,7 +42,7 @@ namespace ewallet_v0._1._13.Servis
             if (nacitajNakup())
             {
                 nakupyLoad = nakupLoad();
-                nakupList = JsonConvert.DeserializeObject<List<Nakup>>(nakupySave);
+                nakupList = JsonConvert.DeserializeObject<List<Nakup>>(nakupyLoad);
             }
             
         }
@@ -73,7 +73,7 @@ namespace ewallet_v0._1._13.Servis
         public string nakupLoad()
         {
             ISharedPreferences pref = Application.Context.GetSharedPreferences("nakupListSave", FileCreationMode.Private);
-            nakupyLoad = pref.GetString("nakupListSave", String.Empty);
+            nakupyLoad = pref.GetString("jsonNakup", String.Empty); //overit spravnosť kodu
             return nakupyLoad;
         }
 

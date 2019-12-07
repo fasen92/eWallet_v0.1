@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:minWidth="300dp"
+	android:minHeight="240dp">
+	<TextView
+		android:text="Nákup bol uložený."
+		android:layout_width="match_parent"
+		android:layout_height="35dp"
+		android:id="@+id/txtOznamenie"
+		android:layout_marginBottom="10dp"
+		android:layout_marginLeft="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginTop="25dp"
+		android:paddingLeft="10dp"
+		android:foregroundGravity="center"
+		android:gravity="center" />
+	<RelativeLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="50dp">
+		<Button
+			android:text="Nový nákup"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:id="@+id/btnNovyNakup"
+			android:layout_marginBottom="10dp"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			android:layout_marginTop="10dp"/>
+		<Button
+			android:text="Zoznam nákupov"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:id="@+id/btnNakupList"
+			android:layout_marginBottom="10dp"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			android:layout_marginTop="55dp"
+			android:paddingLeft="10dp"/>
+		<Button
+			android:text="Prehľad"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:layout_marginBottom="10dp"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			android:layout_marginTop="100dp"
+			android:id="@+id/btnGrafy"/>
+	</RelativeLayout>
+</RelativeLayout>

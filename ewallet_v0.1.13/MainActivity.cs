@@ -10,6 +10,7 @@ using Microcharts.Droid;
 using System.Collections.Generic;
 using Android.Views;
 using Android.Util;
+using ewallet_v0._1._13.Servis;
 
 namespace ewallet_v0._1._13
 {
@@ -20,6 +21,11 @@ namespace ewallet_v0._1._13
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            if (!NakupServis.getInstance().nacitajNakup())
+            {
+                NakupActivity.startActivity(this);
+            }
+
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
