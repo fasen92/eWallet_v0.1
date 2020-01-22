@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+		android:text="Váš nákup bol uložený"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtOznam"
+		android:gravity="center"
+		android:textSize="30sp"
+		android:padding="30px" />
+	<TextView
+		android:text="Obchod: "
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtObchodPrehlad"
+		android:textSize="25sp" />
+	<TextView
+		android:text="Výdaj: "
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtCenaPrehlad"
+		android:textSize="25sp" />
+	<TextView
+		android:text="Dátum: "
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtDatumPrehlad"
+		android:textSize="25sp"
+		android:paddingBottom="20px"/>
+	<TextView
+		android:text="Prosím vyberte ako chcete pokračovať"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtOznam2"
+		android:textSize="25sp" 
+		android:gravity="center"
+		android:paddingTop="100px"
+		android:paddingBottom="50px"/>
+	<Button
+		android:text="NovýNákup"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnNovyNakup" />
+	<Button
+		android:text="Prehľad nákupov"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnGrafy" />
+	<Button
+		android:text="Zoznam nákupov"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnNakupList" />
+
+</LinearLayout>
+
+
+
+
+

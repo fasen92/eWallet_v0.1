@@ -53,6 +53,10 @@ namespace ewallet_v0._1._13
                 Color = SKColor.Parse("#90D585")
                 }
             };
+            var entriesObchod = new[];
+            for(int i = 1; i < )
+            
+
 
             var chart = new BarChart() { Entries = entries };
             var chart1 = new PointChart() { Entries = entries };

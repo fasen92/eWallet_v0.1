@@ -83,10 +83,10 @@ namespace ewallet_v0._1._13.Servis
         }
 
         //developing 
-        /*public void aktualizujNakup(int idNakupu, Nakup nakup)
+        public void aktualizujNakup(int idNakupu, Nakup nakup)
         {
             nakupList[idNakupu] = nakup;
-        }*/
+        }
 
 
 

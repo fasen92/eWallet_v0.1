@@ -78,10 +78,7 @@ namespace ewallet_v0._1._13
                 else
                 {
                     ulozit();
-                    FragmentTransaction transaction = FragmentManager.BeginTransaction();
-                    DialogNakup dialogNakup = new DialogNakup();
-                    dialogNakup.Show(transaction, "dialog fragment");
-                    
+                    //NakupPrehlad.startActivity(this);
                 }
 
                
