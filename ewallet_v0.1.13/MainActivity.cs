@@ -11,13 +11,22 @@ using System.Collections.Generic;
 using Android.Views;
 using Android.Util;
 using ewallet_v0._1._13.Servis;
+using Android.Content;
 
 namespace ewallet_v0._1._13
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : AppCompatActivity
     {
+        List<Entry> tyzdenList;
+        public static void startActivity(Context context)
+        {
+            // intent je objekt, ktorý sa odovzdáva novej aktivite a systém podľa toho vie, čo má spustiť.
+            Intent intent = new Intent(context, typeof(MainActivity));
 
+            // toto volanie spôsobí otvorenie novej aktivity
+            context.StartActivity(intent);
+        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,6 +38,20 @@ namespace ewallet_v0._1._13
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            tyzdenList = new List<Entry>();
+            
+            var vstup = new Entry(111);
+            vstup.Label = "Kaufland";
+            vstup.ValueLabel = "16,50";
+            vstup.Color = SKColor.Parse("#266489");
+            tyzdenList.Add(vstup);
+
+            vstup = new Entry(250);
+            vstup.Label = "tesco";
+            vstup.ValueLabel = "12";
+            vstup.Color = SKColor.Parse("#68B9C0");
+            tyzdenList.Add(vstup);
 
 
             //test grafov
@@ -53,14 +76,14 @@ namespace ewallet_v0._1._13
                 Color = SKColor.Parse("#90D585")
                 }
             };
-            var entriesObchod = new[];
-            for(int i = 1; i < )
+           // var entriesObchod = new[];
+           // for(int i = 1; i < )
             
 
 
             var chart = new BarChart() { Entries = entries };
             var chart1 = new PointChart() { Entries = entries };
-            var chart2 = new DonutChart() { Entries = entries };
+            var chart2 = new DonutChart() { Entries = tyzdenList };
 
             var chartView = FindViewById<ChartView>(Resource.Id.chartView);
             chartView.Chart = chart;

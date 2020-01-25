@@ -10,6 +10,8 @@ using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
+using ewallet_v0._1._13.Model;
 
 namespace ewallet_v0._1._13
 {
@@ -21,11 +23,14 @@ namespace ewallet_v0._1._13
         Button btnNovyNakup;
         Button btnGrafy;
         Button btnNakupList;
+        string nakupPrehladJson;
 
-        public static void startActivity(Context context)
+        public static void startActivityPrehlad(Context context)
         {
-            Intent intent = new Intent(context, typeof(NakupActivity));
+            // intent je objekt, ktorý sa odovzdáva novej aktivite a systém podľa toho vie, čo má spustiť.
+            Intent intent = new Intent(context, typeof(NakupPrehlad));
 
+            // toto volanie spôsobí otvorenie novej aktivity
             context.StartActivity(intent);
         }
 
@@ -34,7 +39,34 @@ namespace ewallet_v0._1._13
             base.OnCreate(SavedInstanceState);
             SetContentView(Resource.Layout.nakup_activity_prehlad_layout);
 
-           //txtObchod=FindViewById<TextView>(Resource.Id.)
+            nakupPrehladJson = Intent.GetStringExtra("Nakup");
+
+            txtObchod = FindViewById<TextView>(Resource.Id.txtObchodPrehlad);
+            txtCena = FindViewById<TextView>(Resource.Id.txtCenaPrehlad);
+            txtDatum = FindViewById<TextView>(Resource.Id.txtDatumPrehlad);
+            btnGrafy = FindViewById<Button>(Resource.Id.btnGrafy);
+            btnNakupList = FindViewById<Button>(Resource.Id.btnNakupList);
+            btnNovyNakup = FindViewById<Button>(Resource.Id.btnNovyNakup);
+
+            Nakup nakup = JsonConvert.DeserializeObject<Nakup>(nakupPrehladJson);
+            txtObchod.Text = nakup.obchodNakup;
+            txtCena.Text = nakup.vydajNakup.ToString();
+            txtDatum.Text = nakup.den + "." + nakup.mesiac + "." + nakup.rok;
+
+            btnGrafy.Click += delegate
+            {
+                MainActivity.startActivity(this);
+            };
+
+            btnNakupList.Click += delegate
+            {
+                //NakupListActivity.startActivity(this);
+            };
+
+            btnNovyNakup.Click += delegate
+            {
+                NakupActivity.startActivity(this);
+            };
         }
     }
 }

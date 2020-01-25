@@ -13,6 +13,7 @@ using Android.Views;
 using Android.Widget;
 using ewallet_v0._1._13.Model;
 using ewallet_v0._1._13.Servis;
+using Newtonsoft.Json;
 
 namespace ewallet_v0._1._13
 {
@@ -21,6 +22,7 @@ namespace ewallet_v0._1._13
     {
         private const int DATE_DIALOG = 1;
         private int rok, mesiac, den;
+        string nakupPrehladJson;
         Button btnDatum;
         Button btnSave;
         EditText txtVydaj;
@@ -78,7 +80,9 @@ namespace ewallet_v0._1._13
                 else
                 {
                     ulozit();
-                    //NakupPrehlad.startActivity(this);
+                    
+                    NakupPrehlad.startActivity(this);
+                    Intent.PutExtra("Nakup", nakupPrehladJson);
                 }
 
                
@@ -147,6 +151,7 @@ namespace ewallet_v0._1._13
 
             Nakup nakup = new Nakup(obchodNakupu, vydajNakupu, den, mesiac, rok);
             NakupServis.getInstance().pridajNakup(nakup);
+            nakupPrehladJson = JsonConvert.SerializeObject(nakup, Formatting.Indented);
         }
     }
 }
