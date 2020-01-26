@@ -25,12 +25,10 @@ namespace ewallet_v0._1._13
         Button btnNakupList;
         string nakupPrehladJson;
 
-        public static void startActivityPrehlad(Context context)
-        {
-            // intent je objekt, ktorý sa odovzdáva novej aktivite a systém podľa toho vie, čo má spustiť.
+        public static void StartActivity(Context context)
+        {     
             Intent intent = new Intent(context, typeof(NakupPrehlad));
 
-            // toto volanie spôsobí otvorenie novej aktivity
             context.StartActivity(intent);
         }
 
@@ -60,7 +58,7 @@ namespace ewallet_v0._1._13
 
             btnNakupList.Click += delegate
             {
-                //NakupListActivity.startActivity(this);
+                NakupListActivity.StartActivity(this);
             };
 
             btnNovyNakup.Click += delegate

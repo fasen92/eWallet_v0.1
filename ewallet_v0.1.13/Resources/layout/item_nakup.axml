@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:padding="8dp">
+
+	<TextView
+		android:text="Obchod"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_weight="1"
+		android:id="@+id/txtObchodList"
+		android:textColor="#ff000000" />
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout1"
+		android:paddingLeft="8dp"
+		android:paddingRight="8dp"
+		>
+		<TextView
+			android:text="Cena"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/txtCenaList"
+			android:textColor="#ff000000" />
+		<TextView
+			android:text="Datum"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/txtDatumList"
+			android:textColor="#ff000000"
+			android:paddingTop="4dp" />
+	</LinearLayout>
+
+</LinearLayout>

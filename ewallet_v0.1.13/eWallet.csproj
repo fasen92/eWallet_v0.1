@@ -59,7 +59,9 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Model\Nakup.cs" />
     <Compile Include="NakupActivity.cs" />
+    <Compile Include="NakupAdapter.cs" />
     <Compile Include="NakupPrehlad.cs" />
+    <Compile Include="NakupListActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servis\NakupServis.cs" />
@@ -135,6 +137,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\nakup_activity_prehlad_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\nakup_list_activity_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\item_nakup.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

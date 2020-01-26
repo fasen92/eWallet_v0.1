@@ -33,10 +33,7 @@ namespace ewallet_v0._1._13
 
         public static void startActivity(Context context)
         {
-            // intent je objekt, ktorý sa odovzdáva novej aktivite a systém podľa toho vie, čo má spustiť.
             Intent intent = new Intent(context, typeof(NakupActivity));
-
-            // toto volanie spôsobí otvorenie novej aktivity
             context.StartActivity(intent);
         }
 
@@ -49,8 +46,18 @@ namespace ewallet_v0._1._13
             SetContentView(Resource.Layout.nakup_activity_layout);
 
             // týmto zapnem v ActionBare šípku späť
-            SupportActionBar.SetDisplayShowHomeEnabled(true);
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            
+            if (!NakupServis.getInstance().nacitajNakup())
+            {
+                SupportActionBar.SetDisplayShowHomeEnabled(false);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(false);
+            }
+            else
+            {
+                SupportActionBar.SetDisplayShowHomeEnabled(true);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            }
+
 
             btnDatum = FindViewById<Button>(Resource.Id.btnDatum);
             btnSave = FindViewById<Button>(Resource.Id.btnSave);
@@ -80,9 +87,10 @@ namespace ewallet_v0._1._13
                 else
                 {
                     ulozit();
-                    
-                    NakupPrehlad.startActivity(this);
-                    Intent.PutExtra("Nakup", nakupPrehladJson);
+
+                    /*NakupPrehlad.StartActivity(this);*/
+                    StartAuthenticatedActivity(typeof(NakupPrehlad));
+                    //Intent.PutExtra("Nakup", nakupPrehladJson);
                 }
 
                
@@ -152,6 +160,13 @@ namespace ewallet_v0._1._13
             Nakup nakup = new Nakup(obchodNakupu, vydajNakupu, den, mesiac, rok);
             NakupServis.getInstance().pridajNakup(nakup);
             nakupPrehladJson = JsonConvert.SerializeObject(nakup, Formatting.Indented);
+        }
+
+        public void StartAuthenticatedActivity(System.Type activityType)
+        {
+            var intent = new Intent(this, activityType);
+            Intent.PutExtra("Nakup", nakupPrehladJson);
+            StartActivity(intent);
         }
     }
 }
