@@ -47,7 +47,7 @@ namespace ewallet_v0._1._13
 
             // týmto zapnem v ActionBare šípku späť
             
-            if (!NakupServis.getInstance().nacitajNakup())
+            if (NakupServis.getInstance().emptyNakup())
             {
                 SupportActionBar.SetDisplayShowHomeEnabled(false);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(false);
@@ -88,9 +88,7 @@ namespace ewallet_v0._1._13
                 {
                     ulozit();
 
-                    /*NakupPrehlad.StartActivity(this);*/
                     StartAuthenticatedActivity(typeof(NakupPrehlad));
-                    //Intent.PutExtra("Nakup", nakupPrehladJson);
                 }
 
                
@@ -149,7 +147,7 @@ namespace ewallet_v0._1._13
         }
 
         //ulozenie do objektu
-        private void ulozit()
+        public void ulozit()
         {
             string obchodNakupu = txtObchod.Text;
             double vydajNakupu = double.Parse(txtVydaj.Text, CultureInfo.InvariantCulture);
@@ -158,14 +156,15 @@ namespace ewallet_v0._1._13
             int rokNakupu = rok;
 
             Nakup nakup = new Nakup(obchodNakupu, vydajNakupu, den, mesiac, rok);
+            nakupPrehladJson = JsonConvert.SerializeObject(nakup);
             NakupServis.getInstance().pridajNakup(nakup);
-            nakupPrehladJson = JsonConvert.SerializeObject(nakup, Formatting.Indented);
+            
         }
 
         public void StartAuthenticatedActivity(System.Type activityType)
         {
-            var intent = new Intent(this, activityType);
-            Intent.PutExtra("Nakup", nakupPrehladJson);
+            var intent = new Intent(this, typeof(NakupPrehlad));
+            intent.PutExtra("Nakup",nakupPrehladJson);
             StartActivity(intent);
         }
     }

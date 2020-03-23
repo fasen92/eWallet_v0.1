@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace ewallet_v0._1._13.Model
 {
-    class Nakup : Java.Lang.Object
+    class Nakup
     {
         public string obchodNakup { get;  }
         public double vydajNakup { get; }

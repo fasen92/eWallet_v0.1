@@ -22,10 +22,6 @@ namespace ewallet_v0._1._13
         {
             this.activity = activity;
             this.nakupList = nakupList;
-            if (this.nakupList == null)
-            {
-                this.nakupList = new List<Nakup>().AsReadOnly();
-            }
         }
 
         public override Nakup this[int position] => nakupList[position];

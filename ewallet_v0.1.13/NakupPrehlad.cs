@@ -15,6 +15,7 @@ using ewallet_v0._1._13.Model;
 
 namespace ewallet_v0._1._13
 {
+    [Activity(Label = "Nakup prehľad")]
     class NakupPrehlad : AppCompatActivity
     {
         TextView txtObchod;
@@ -23,9 +24,10 @@ namespace ewallet_v0._1._13
         Button btnNovyNakup;
         Button btnGrafy;
         Button btnNakupList;
-        string nakupPrehladJson;
+        //string nakupPrehladJson;
 
-        public static void StartActivity(Context context)
+        
+        public static void startActivity(Context context)
         {     
             Intent intent = new Intent(context, typeof(NakupPrehlad));
 
@@ -37,7 +39,7 @@ namespace ewallet_v0._1._13
             base.OnCreate(SavedInstanceState);
             SetContentView(Resource.Layout.nakup_activity_prehlad_layout);
 
-            nakupPrehladJson = Intent.GetStringExtra("Nakup");
+            
 
             txtObchod = FindViewById<TextView>(Resource.Id.txtObchodPrehlad);
             txtCena = FindViewById<TextView>(Resource.Id.txtCenaPrehlad);
@@ -46,7 +48,9 @@ namespace ewallet_v0._1._13
             btnNakupList = FindViewById<Button>(Resource.Id.btnNakupList);
             btnNovyNakup = FindViewById<Button>(Resource.Id.btnNovyNakup);
 
-            Nakup nakup = JsonConvert.DeserializeObject<Nakup>(nakupPrehladJson);
+
+            //nakupPrehladJson = Intent.GetStringExtra("Nakup");
+            Nakup nakup = JsonConvert.DeserializeObject<Nakup>(Intent.GetStringExtra("Nakup"));
             txtObchod.Text = nakup.obchodNakup;
             txtCena.Text = nakup.vydajNakup.ToString();
             txtDatum.Text = nakup.den + "." + nakup.mesiac + "." + nakup.rok;

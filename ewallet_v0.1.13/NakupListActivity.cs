@@ -15,6 +15,7 @@ using static Android.Widget.AdapterView;
 
 namespace ewallet_v0._1._13
 {
+    [Activity(Label = "Zoznam nákupov")]
     class NakupListActivity : AppCompatActivity
     {
         ListView lvNakupList;
@@ -36,7 +37,8 @@ namespace ewallet_v0._1._13
 
             NakupServis nakupServis = NakupServis.getInstance();
 
-            adapter = new NakupAdapter(this, nakupServis.getNakupy());
+            adapter = new NakupAdapter(this, nakupServis.GetNakupList());
+            lvNakupList.Adapter = adapter;
 
             lvNakupList.ItemClick += (object sender, ItemClickEventArgs e) =>
             {
@@ -51,11 +53,11 @@ namespace ewallet_v0._1._13
             adapter.NotifyDataSetChanged();
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
+       /* public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu, menu);
             return true;
-        }
+        }*/
 
         // Keď kliknem na položku v menu, systém volá túto metódu, aby sme mohli naprogramovať čo sa má stať po kliknutí na položku v menu
        /* public override bool OnOptionsItemSelected(IMenuItem item)

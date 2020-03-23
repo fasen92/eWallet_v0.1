@@ -21,16 +21,14 @@ namespace ewallet_v0._1._13
         List<Entry> tyzdenList;
         public static void startActivity(Context context)
         {
-            // intent je objekt, ktorý sa odovzdáva novej aktivite a systém podľa toho vie, čo má spustiť.
             Intent intent = new Intent(context, typeof(MainActivity));
 
-            // toto volanie spôsobí otvorenie novej aktivity
             context.StartActivity(intent);
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            if (!NakupServis.getInstance().nacitajNakup())
+            if (!NakupServis.getInstance().emptyNakup())
             {
                 NakupActivity.startActivity(this);
             }
