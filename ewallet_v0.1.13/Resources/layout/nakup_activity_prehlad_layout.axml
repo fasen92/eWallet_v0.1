@@ -56,7 +56,7 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/btnNovyNakup" />
 	<Button
-		android:text="Prehľad nákupov"
+		android:text="Grafy"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/btnGrafy" />

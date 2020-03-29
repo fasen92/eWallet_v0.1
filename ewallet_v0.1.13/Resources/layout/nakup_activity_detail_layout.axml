@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:padding="8dp">
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/txtObchodDetail"
+		android:hint="Obchod"
+		android:textSize="24sp"/>
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtCenaDetail"
+		android:hint="Cena"
+		android:inputType="none|number|numberDecimal"
+		android:textSize="24sp"
+		android:numeric="decimal|integer"/>
+	<TextView
+		android:text="Text"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/txtDatumDetail"
+		android:textSize="24sp"/>
+	<Button
+		android:text="klikni pre zadanie dátumu"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnDatumDetail" />
+	<Button
+		android:text="Uložiť zmeny"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnSaveDetail" />
+	<Button
+		android:text="Vymazať záznam"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnDeleteDetail" />
+</LinearLayout>

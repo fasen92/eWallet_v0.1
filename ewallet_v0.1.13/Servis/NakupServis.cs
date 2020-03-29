@@ -45,9 +45,9 @@ namespace ewallet_v0._1._13.Servis
             ulozNakupList();
         }
 
-        public void vymazNakup(Nakup nakup)
+        public void vymazNakup(int index)
         {
-            NakupList.Remove(nakup);
+            NakupList.RemoveAt(index);
             ulozNakupList();
         }
 
@@ -59,10 +59,11 @@ namespace ewallet_v0._1._13.Servis
 
         public bool emptyNakup()
         {
-            if (NakupList.Count == 0)
+            if (NakupList.Any())
                 return true;
             else
                 return false;
+            
         }
 
         public List<Nakup> GetNakupList()
@@ -100,7 +101,11 @@ namespace ewallet_v0._1._13.Servis
             string sSerializedNakupy = pref.GetString("jsonNakup", String.Empty);
 
             if (sSerializedNakupy == string.Empty)
+            {
+                NakupList.Clear();
                 return;
+            }
+                
 
             string[] serializedNakupy = sSerializedNakupy.Split("GJ6MK");
             foreach(var nakupS in serializedNakupy)

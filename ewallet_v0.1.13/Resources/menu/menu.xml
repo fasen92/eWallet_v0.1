@@ -4,7 +4,12 @@
   <item android:id="@+id/novyNakup"
         android:title="Nový nákup"
         />
-  
+  <item android:id="@+id/grafy"
+        android:title="Grafy"
+         />
+  <item android:id="@+id/zoznamNakupov"
+        android:title="Zoznam nákupov"
+         />
   <item android:id="@+id/info"
         android:title="Info" 
          />

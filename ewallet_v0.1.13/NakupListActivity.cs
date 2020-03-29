@@ -42,7 +42,7 @@ namespace ewallet_v0._1._13
 
             lvNakupList.ItemClick += (object sender, ItemClickEventArgs e) =>
             {
-                //DetailNakupuActivity.startActivity(this, e.Position);
+                NakupDetailActivity.startActivity(this, e.Position);
             };
         }
         protected override void OnResume()
@@ -53,30 +53,31 @@ namespace ewallet_v0._1._13
             adapter.NotifyDataSetChanged();
         }
 
-       /* public override bool OnCreateOptionsMenu(IMenu menu)
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu, menu);
             return true;
-        }*/
+        }
 
-        // Keď kliknem na položku v menu, systém volá túto metódu, aby sme mohli naprogramovať čo sa má stať po kliknutí na položku v menu
-       /* public override bool OnOptionsItemSelected(IMenuItem item)
+        public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            if (item.ItemId == Resource.Id.novyNakup)
-            {
-                DetailNakupuActivity.startActivity(this, -1);
-                return true;
-            }
-            else
-            {
-                return base.OnOptionsItemSelected(item);
-            }
+                switch (item.ItemId)
+                {
+                    case Resource.Id.novyNakup:
+                        NakupActivity.startActivity(this);
+                        return true;
+                    case Resource.Id.grafy:
+                        MainActivity.startActivity(this);
+                        return true;
+                    case Resource.Id.zoznamNakupov:
+                        NakupListActivity.StartActivity(this);
+                        return true;
+                    case Resource.Id.info:
+                        return true;
+                }
+                return base.OnOptionsItemSelected(item);         
 
-        }*/
-
-
-
-
+        }
 
     }
 }

@@ -133,6 +133,20 @@ namespace ewallet_v0._1._13
             }
             else
             {
+                switch (item.ItemId)
+                            {
+                                case Resource.Id.novyNakup:
+                                    NakupActivity.startActivity(this);
+                                    return true;
+                                case Resource.Id.grafy:
+                                    MainActivity.startActivity(this);
+                                    return true;
+                                case Resource.Id.zoznamNakupov:
+                                    NakupListActivity.StartActivity(this);
+                                    return true;
+                                case Resource.Id.info:
+                                    return true;
+                            }
                 return base.OnOptionsItemSelected(item);
             }
         }
@@ -151,9 +165,6 @@ namespace ewallet_v0._1._13
         {
             string obchodNakupu = txtObchod.Text;
             double vydajNakupu = double.Parse(txtVydaj.Text, CultureInfo.InvariantCulture);
-            int denNakupu = den;
-            int mesiacNakupu = mesiac;
-            int rokNakupu = rok;
 
             Nakup nakup = new Nakup(obchodNakupu, vydajNakupu, den, mesiac, rok);
             nakupPrehladJson = JsonConvert.SerializeObject(nakup);
@@ -167,5 +178,12 @@ namespace ewallet_v0._1._13
             intent.PutExtra("Nakup",nakupPrehladJson);
             StartActivity(intent);
         }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.menu, menu);
+            return true;
+        }
+
     }
 }

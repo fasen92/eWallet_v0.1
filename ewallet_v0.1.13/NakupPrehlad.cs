@@ -55,6 +55,8 @@ namespace ewallet_v0._1._13
             txtCena.Text = nakup.vydajNakup.ToString();
             txtDatum.Text = nakup.den + "." + nakup.mesiac + "." + nakup.rok;
 
+
+
             btnGrafy.Click += delegate
             {
                 MainActivity.startActivity(this);
