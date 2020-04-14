@@ -28,8 +28,8 @@ namespace ewallet_v0._1._13
         EditText txtVydaj;
         EditText txtObchod;
         TextView txtDatum;
-        
-        
+
+
 
         public static void startActivity(Context context)
         {
@@ -46,7 +46,7 @@ namespace ewallet_v0._1._13
             SetContentView(Resource.Layout.nakup_activity_layout);
 
             // týmto zapnem v ActionBare šípku späť
-            
+
             if (NakupServis.getInstance().emptyNakup())
             {
                 SupportActionBar.SetDisplayShowHomeEnabled(false);
@@ -80,7 +80,8 @@ namespace ewallet_v0._1._13
                 {
                     Toast.MakeText(this, "Názov obchodu nebol zadaný, prosím zadajte názov obchodu.", ToastLength.Long).Show();
 
-                } else if(txtVydaj.Text == "")
+                }
+                else if (txtVydaj.Text == "")
                 {
                     Toast.MakeText(this, "Cena nákupu nebola zadaná, prosím zadajte cenu nákupu.", ToastLength.Long).Show();
                 }
@@ -91,7 +92,7 @@ namespace ewallet_v0._1._13
                     StartAuthenticatedActivity(typeof(NakupPrehlad));
                 }
 
-               
+
             };
         }
 
@@ -100,9 +101,9 @@ namespace ewallet_v0._1._13
         {
             den = int.Parse(DateTime.Now.ToString("dd"));
             mesiac = int.Parse(DateTime.Now.ToString("MM"));
-            mesiac = mesiac - 1;
+            // mesiac = mesiac - 1;
             rok = int.Parse(DateTime.Now.ToString("yyyy"));
-           
+
         }
 
 #pragma warning disable CS0672 // Member overrides obsolete member
@@ -134,19 +135,19 @@ namespace ewallet_v0._1._13
             else
             {
                 switch (item.ItemId)
-                            {
-                                case Resource.Id.novyNakup:
-                                    NakupActivity.startActivity(this);
-                                    return true;
-                                case Resource.Id.grafy:
-                                    MainActivity.startActivity(this);
-                                    return true;
-                                case Resource.Id.zoznamNakupov:
-                                    NakupListActivity.StartActivity(this);
-                                    return true;
-                                case Resource.Id.info:
-                                    return true;
-                            }
+                {
+                    case Resource.Id.novyNakup:
+                        NakupActivity.startActivity(this);
+                        return true;
+                    case Resource.Id.grafy:
+                        MainActivity.startActivity(this);
+                        return true;
+                    case Resource.Id.zoznamNakupov:
+                        NakupListActivity.StartActivity(this);
+                        return true;
+                    case Resource.Id.info:
+                        return true;
+                }
                 return base.OnOptionsItemSelected(item);
             }
         }
@@ -157,7 +158,7 @@ namespace ewallet_v0._1._13
             rok = year;
             mesiac = month;
             den = dayOfMonth;
-            txtDatum.Text = "Dátum: " + den + "." + (mesiac+1) + "." + rok;
+            txtDatum.Text = "Dátum: " + den + "." + mesiac + "." + rok;
         }
 
         //ulozenie do objektu
@@ -169,13 +170,13 @@ namespace ewallet_v0._1._13
             Nakup nakup = new Nakup(obchodNakupu, vydajNakupu, den, mesiac, rok);
             nakupPrehladJson = JsonConvert.SerializeObject(nakup);
             NakupServis.getInstance().pridajNakup(nakup);
-            
+
         }
 
         public void StartAuthenticatedActivity(System.Type activityType)
         {
             var intent = new Intent(this, typeof(NakupPrehlad));
-            intent.PutExtra("Nakup",nakupPrehladJson);
+            intent.PutExtra("Nakup", nakupPrehladJson);
             StartActivity(intent);
         }
 

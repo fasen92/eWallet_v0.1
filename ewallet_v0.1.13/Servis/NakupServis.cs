@@ -59,7 +59,7 @@ namespace ewallet_v0._1._13.Servis
 
         public bool emptyNakup()
         {
-            if (NakupList.Any())
+            if (NakupList.Count == 0)
                 return true;
             else
                 return false;
@@ -101,11 +101,8 @@ namespace ewallet_v0._1._13.Servis
             string sSerializedNakupy = pref.GetString("jsonNakup", String.Empty);
 
             if (sSerializedNakupy == string.Empty)
-            {
-                NakupList.Clear();
                 return;
-            }
-                
+        
 
             string[] serializedNakupy = sSerializedNakupy.Split("GJ6MK");
             foreach(var nakupS in serializedNakupy)
