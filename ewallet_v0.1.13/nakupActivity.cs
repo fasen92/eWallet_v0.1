@@ -101,7 +101,7 @@ namespace ewallet_v0._1._13
         {
             den = int.Parse(DateTime.Now.ToString("dd"));
             mesiac = int.Parse(DateTime.Now.ToString("MM"));
-            // mesiac = mesiac - 1;
+            mesiac = mesiac - 1;
             rok = int.Parse(DateTime.Now.ToString("yyyy"));
 
         }
@@ -156,7 +156,7 @@ namespace ewallet_v0._1._13
         {
             //tu nastav čo sa ma stať po zadani datumu
             rok = year;
-            mesiac = month;
+            mesiac = month+1;
             den = dayOfMonth;
             txtDatum.Text = "Dátum: " + den + "." + mesiac + "." + rok;
         }

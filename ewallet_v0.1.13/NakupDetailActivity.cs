@@ -126,9 +126,9 @@ namespace ewallet_v0._1._13
         {
             //tu nastav čo sa ma stať po zadani datumu
             rok = year;
-            mesiac = month;
+            mesiac = month+1;
             den = dayOfMonth;
-            txtDatum.Text =den + "." + (mesiac + 1) + "." + rok;
+            txtDatum.Text =den + "." + mesiac + "." + rok;
         }
 
 
