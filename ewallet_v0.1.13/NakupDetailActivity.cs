@@ -26,7 +26,9 @@ namespace ewallet_v0._1._13
         Button btnDelete;
         EditText txtVydaj;
         EditText txtObchod;
+        EditText txtKategoria;
         TextView txtDatum;
+
         int den, mesiac, rok;
         int idNakup;
 
@@ -51,6 +53,7 @@ namespace ewallet_v0._1._13
             txtObchod = FindViewById<EditText>(Resource.Id.txtObchodDetail);
             txtVydaj = FindViewById<EditText>(Resource.Id.txtCenaDetail);
             txtDatum = FindViewById<TextView>(Resource.Id.txtDatumDetail);
+            txtKategoria = FindViewById<EditText>(Resource.Id.txtKatDetail);
 
             btnSave.Click += delegate
             {
@@ -67,6 +70,7 @@ namespace ewallet_v0._1._13
 
                 txtObchod.Text = nakup.obchodNakup;
                 txtVydaj.Text = nakup.vydajNakup.ToString();
+                txtKategoria.Text = nakup.kategoria;
                 txtDatum.Text = nakup.den + "." + nakup.mesiac + "." + nakup.rok;
                 den = nakup.den;
                 mesiac = nakup.mesiac;
@@ -113,7 +117,7 @@ namespace ewallet_v0._1._13
             {
                 case DATE_DIALOG:
                     {
-                        return new DatePickerDialog(this, this, rok, mesiac, den);
+                        return new DatePickerDialog(this, this, rok, mesiac-1, den);
                     }
                 default:
                     break;
@@ -136,8 +140,9 @@ namespace ewallet_v0._1._13
         {
             string obchodNakupu = txtObchod.Text;
             double vydajNakupu = double.Parse(txtVydaj.Text, CultureInfo.InvariantCulture);
+            string kategoriaNakupu = txtKategoria.Text;
 
-            Nakup nakup = new Nakup(obchodNakupu, vydajNakupu, den, mesiac, rok);
+            Nakup nakup = new Nakup(obchodNakupu, vydajNakupu, den, mesiac, rok, kategoriaNakupu);
             NakupServis.getInstance().editNakup(nakup, idNakup);
             Finish();
         }

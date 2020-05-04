@@ -30,6 +30,7 @@
 		android:minHeight="25px"
 		android:id="@+id/txtCenaPrehlad"
 		android:textSize="25sp" />
+
 	<TextView
 		android:text="Dátum: "
 		android:layout_width="match_parent"
@@ -38,7 +39,16 @@
 		android:minHeight="25px"
 		android:id="@+id/txtDatumPrehlad"
 		android:textSize="25sp"
-		android:paddingBottom="20px"/>
+		/>	
+	<TextView
+		android:text="Kategória: "
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtKatPrehlad"
+		android:textSize="25sp" 
+	android:paddingBottom="20px"/>
 	<TextView
 		android:text="Prosím vyberte ako chcete pokračovať"
 		android:layout_width="match_parent"

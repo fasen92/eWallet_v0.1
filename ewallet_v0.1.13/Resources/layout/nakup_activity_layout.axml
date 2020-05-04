@@ -12,13 +12,42 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/txtObchodNazov"
 		android:textSize="24sp" />
+	<GridLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/gridLayoutObchod"
+		android:columnCount="4"
+		android:rowCount="1">
+		<Button
+			android:layout_columnWeight="1"
+			android:layout_rowWeight="1"
+			android:text="Kaufland"
+			android:id="@+id/btnKatKauf" />
+		<Button
+			android:layout_columnWeight="1"
+			android:layout_rowWeight="1"
+			android:text="Tesco"
+			android:id="@+id/btnKatTesco" />
+		<Button
+			android:layout_columnWeight="1"
+			android:layout_rowWeight="1"
+			android:text="Billa"
+			android:id="@+id/btnKatBilla" />
+		<Button
+			android:layout_columnWeight="1"
+			android:layout_rowWeight="1"
+			android:text="Jednota"
+			android:id="@+id/btnKatJednota" />
+	</GridLayout>
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:id="@+id/txtObchod"
-		android:hint="Zadaj obchod"
+		android:hint="Zadaj iný obchod"
 		android:textSize="20sp" 
 		/>
 	<TextView
@@ -48,6 +77,50 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/btnDatum"/>
+	<TextView
+		android:text="Kategória"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/txtKateg"
+		android:textSize="24sp" />
+	<GridLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/gridLayoutKat"
+		android:columnCount="2"
+		android:rowCount="2">
+		<Button
+			android:layout_columnWeight="1"
+			android:layout_rowWeight="1"
+			android:text="Jedlo"
+			android:id="@+id/btnKatJedlo" />
+		<Button
+			android:layout_columnWeight="1"
+			android:layout_rowWeight="1"
+			android:text="Zábava"
+			android:id="@+id/btnKatZabava" />
+		<Button
+			android:layout_columnWeight="1"
+			android:layout_rowWeight="1"
+			android:text="Oblečenie"
+			android:id="@+id/btnKatOblecenie" />
+		<Button
+			android:layout_columnWeight="1"
+			android:layout_rowWeight="1"
+			android:text="Doprava"
+			android:id="@+id/btnKatDoprava" />
+	</GridLayout>
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtKategoria"
+		android:hint="Zadaj inú kategóriu"
+		android:textSize="20sp" 
+		/>
 	<Button
 		android:text="Uložiť nákup"
 		android:layout_width="match_parent"

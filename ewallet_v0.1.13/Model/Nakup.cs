@@ -19,16 +19,18 @@ namespace ewallet_v0._1._13.Model
         public int den { get; }
         public int mesiac { get; }
         public int rok { get; }
+        public string kategoria { get; }
 
 
 
-        public Nakup(string obchodNakup, double vydajNakup, int den, int mesiac, int rok)
+        public Nakup(string obchodNakup, double vydajNakup, int den, int mesiac, int rok, string kategoria)
         {
             this.obchodNakup = obchodNakup;
             this.vydajNakup = vydajNakup;
             this.den = den;
             this.mesiac = mesiac;
             this.rok = rok;
+            this.kategoria = kategoria;
         }
     }
 }

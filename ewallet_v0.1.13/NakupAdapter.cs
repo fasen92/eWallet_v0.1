@@ -45,10 +45,12 @@ namespace ewallet_v0._1._13
             TextView tvObchod = row.FindViewById<TextView>(Resource.Id.txtObchodList);
             TextView tvCena = row.FindViewById<TextView>(Resource.Id.txtCenaList);
             TextView tvDatum = row.FindViewById<TextView>(Resource.Id.txtDatumList);
+            TextView tvKategoria = row.FindViewById<TextView>(Resource.Id.txtKatList);
 
             Nakup nakup = nakupList[position];
             tvObchod.Text = nakup.obchodNakup;
             tvCena.Text = nakup.vydajNakup.ToString();
+            tvKategoria.Text = nakup.kategoria;
             tvDatum.Text = nakup.den + "." + nakup.mesiac + "." + nakup.rok;
 
             return row;

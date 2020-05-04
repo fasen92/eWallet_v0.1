@@ -8,12 +8,22 @@
 
 	<TextView
 		android:text="Obchod"
-		android:layout_width="wrap_content"
+		android:layout_width="50px"
 		android:layout_height="wrap_content"
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_weight="1"
 		android:id="@+id/txtObchodList"
+		android:textColor="#ff000000" />
+
+		<TextView
+		android:text="Kategória"
+		android:layout_width="50px"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_weight="1"
+		android:id="@+id/txtKatList"
 		android:textColor="#ff000000" />
 
 	<LinearLayout

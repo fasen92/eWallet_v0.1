@@ -6,17 +6,47 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+		<TextView
+		android:text="Posledných 7 dní"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/txtLast7"
+		android:textSize="24sp" />
         <microcharts.droid.ChartView
-            android:id="@+id/chartView"
+            android:id="@+id/chartViewLast7"
             android:layout_width="match_parent"
             android:layout_height="160dp" />
 		<microcharts.droid.ChartView
-            android:id="@+id/chartView1"
+            android:id="@+id/chartViewLast7kat"
+            android:layout_width="match_parent"
+            android:layout_height="160dp" />
+		<TextView
+		android:text="Týždeň"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/txtLast7"
+		android:textSize="24sp" />
+		<microcharts.droid.ChartView
+            android:id="@+id/chartViewWeek"
             android:layout_width="match_parent"
             android:layout_height="160dp" />
 		<microcharts.droid.ChartView
-            android:id="@+id/chartView2"
+            android:id="@+id/chartViewWeekkat"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:layout_height="160dp" />
+		<TextView
+		android:text="Mesiac"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/txtLast7"
+		android:textSize="24sp" />
+		<microcharts.droid.ChartView
+            android:id="@+id/chartViewMonth"
+            android:layout_width="match_parent"
+            android:layout_height="160dp" />
+		<microcharts.droid.ChartView
+            android:id="@+id/chartViewMonthkat"
+            android:layout_width="match_parent"
+            android:layout_height="160dp" />
     </LinearLayout>
 </ScrollView>

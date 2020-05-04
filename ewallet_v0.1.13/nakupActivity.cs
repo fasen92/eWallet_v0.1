@@ -27,7 +27,17 @@ namespace ewallet_v0._1._13
         Button btnSave;
         EditText txtVydaj;
         EditText txtObchod;
+        EditText txtKategoria;
         TextView txtDatum;
+        Button btnKatJedlo;
+        Button btnKatZabava;
+        Button btnKatOblecenie;
+        Button btnKatDoprava;
+        Button btnKatKauf;
+        Button btnKatTesco;
+        Button btnKatBilla;
+        Button btnKatJednota;
+
 
 
 
@@ -64,6 +74,17 @@ namespace ewallet_v0._1._13
             txtObchod = FindViewById<EditText>(Resource.Id.txtObchod);
             txtVydaj = FindViewById<EditText>(Resource.Id.txtCena);
             txtDatum = FindViewById<TextView>(Resource.Id.txtDatum);
+            txtKategoria = FindViewById<EditText>(Resource.Id.txtKategoria);
+            
+            btnKatBilla = FindViewById<Button>(Resource.Id.btnKatBilla);
+            btnKatDoprava = FindViewById<Button>(Resource.Id.btnKatDoprava);
+            btnKatJedlo = FindViewById<Button>(Resource.Id.btnKatJedlo);
+            btnKatJednota = FindViewById<Button>(Resource.Id.btnKatJednota);
+            btnKatKauf = FindViewById<Button>(Resource.Id.btnKatKauf);
+            btnKatOblecenie = FindViewById<Button>(Resource.Id.btnKatOblecenie);
+            btnKatTesco = FindViewById<Button>(Resource.Id.btnKatTesco);
+            btnKatZabava = FindViewById<Button>(Resource.Id.btnKatZabava);
+
 
 
             //button cez ktorý otvoríme dialog na dátum
@@ -73,6 +94,16 @@ namespace ewallet_v0._1._13
                 ShowDialog(DATE_DIALOG);
 #pragma warning restore CS0618 // Type or member is obsolete
             };
+
+            btnKatBilla.Click += delegate { txtObchod.Text = "Billa"; };
+            btnKatTesco.Click += delegate { txtObchod.Text = "Tesco"; };
+            btnKatKauf.Click += delegate { txtObchod.Text = "Kaufland"; };
+            btnKatJednota.Click += delegate { txtObchod.Text = "Jednota"; };
+            btnKatJedlo.Click += delegate { txtKategoria.Text = "Jedlo"; };
+            btnKatZabava.Click += delegate { txtKategoria.Text = "Zábava"; };
+            btnKatOblecenie.Click += delegate { txtKategoria.Text = "Oblečenie"; };
+            btnKatDoprava.Click += delegate { txtKategoria.Text = "Doprava"; };
+
 
             btnSave.Click += delegate
             {
@@ -84,6 +115,10 @@ namespace ewallet_v0._1._13
                 else if (txtVydaj.Text == "")
                 {
                     Toast.MakeText(this, "Cena nákupu nebola zadaná, prosím zadajte cenu nákupu.", ToastLength.Long).Show();
+                }
+                else if (txtKategoria.Text == "")
+                {
+                    Toast.MakeText(this, "Kategória nákupu nebola zadaná, prosím zadajte kategóriu nákupu.", ToastLength.Long).Show();
                 }
                 else
                 {
@@ -166,8 +201,9 @@ namespace ewallet_v0._1._13
         {
             string obchodNakupu = txtObchod.Text;
             double vydajNakupu = double.Parse(txtVydaj.Text, CultureInfo.InvariantCulture);
+            string kategoriaNakupu = txtKategoria.Text;
 
-            Nakup nakup = new Nakup(obchodNakupu, vydajNakupu, den, mesiac, rok);
+            Nakup nakup = new Nakup(obchodNakupu, vydajNakupu, den, mesiac, rok, kategoriaNakupu);
             nakupPrehladJson = JsonConvert.SerializeObject(nakup);
             NakupServis.getInstance().pridajNakup(nakup);
 

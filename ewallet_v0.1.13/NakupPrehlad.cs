@@ -21,9 +21,11 @@ namespace ewallet_v0._1._13
         TextView txtObchod;
         TextView txtCena;
         TextView txtDatum;
+        TextView txtKategoria;
         Button btnNovyNakup;
         Button btnGrafy;
         Button btnNakupList;
+
         //string nakupPrehladJson;
 
         
@@ -44,6 +46,7 @@ namespace ewallet_v0._1._13
             txtObchod = FindViewById<TextView>(Resource.Id.txtObchodPrehlad);
             txtCena = FindViewById<TextView>(Resource.Id.txtCenaPrehlad);
             txtDatum = FindViewById<TextView>(Resource.Id.txtDatumPrehlad);
+            txtKategoria = FindViewById<TextView>(Resource.Id.txtKatPrehlad);
             btnGrafy = FindViewById<Button>(Resource.Id.btnGrafy);
             btnNakupList = FindViewById<Button>(Resource.Id.btnNakupList);
             btnNovyNakup = FindViewById<Button>(Resource.Id.btnNovyNakup);
@@ -53,6 +56,7 @@ namespace ewallet_v0._1._13
             Nakup nakup = JsonConvert.DeserializeObject<Nakup>(Intent.GetStringExtra("Nakup"));
             txtObchod.Text = nakup.obchodNakup;
             txtCena.Text = nakup.vydajNakup.ToString();
+            txtKategoria.Text = nakup.kategoria;
             txtDatum.Text = nakup.den + "." + nakup.mesiac + "." + nakup.rok;
 
 
