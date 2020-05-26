@@ -33,10 +33,8 @@ namespace ewallet_v0._1._13
         Button btnKatZabava;
         Button btnKatOblecenie;
         Button btnKatDoprava;
-        Button btnKatKauf;
-        Button btnKatTesco;
-        Button btnKatBilla;
-        Button btnKatJednota;
+        Button btnPotvrdObchod;
+        List<Obchod> obchodyObjList;
 
 
 
@@ -68,6 +66,8 @@ namespace ewallet_v0._1._13
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             }
 
+            
+
 
             btnDatum = FindViewById<Button>(Resource.Id.btnDatum);
             btnSave = FindViewById<Button>(Resource.Id.btnSave);
@@ -75,16 +75,13 @@ namespace ewallet_v0._1._13
             txtVydaj = FindViewById<EditText>(Resource.Id.txtCena);
             txtDatum = FindViewById<TextView>(Resource.Id.txtDatum);
             txtKategoria = FindViewById<EditText>(Resource.Id.txtKategoria);
+            btnPotvrdObchod = FindViewById<Button>(Resource.Id.btnPotvrdObchod);
             
-            btnKatBilla = FindViewById<Button>(Resource.Id.btnKatBilla);
+            
             btnKatDoprava = FindViewById<Button>(Resource.Id.btnKatDoprava);
             btnKatJedlo = FindViewById<Button>(Resource.Id.btnKatJedlo);
-            btnKatJednota = FindViewById<Button>(Resource.Id.btnKatJednota);
-            btnKatKauf = FindViewById<Button>(Resource.Id.btnKatKauf);
             btnKatOblecenie = FindViewById<Button>(Resource.Id.btnKatOblecenie);
-            btnKatTesco = FindViewById<Button>(Resource.Id.btnKatTesco);
             btnKatZabava = FindViewById<Button>(Resource.Id.btnKatZabava);
-
 
 
             //button cez ktorý otvoríme dialog na dátum
@@ -95,22 +92,31 @@ namespace ewallet_v0._1._13
 #pragma warning restore CS0618 // Type or member is obsolete
             };
 
-            btnKatBilla.Click += delegate { txtObchod.Text = "Billa"; };
-            btnKatTesco.Click += delegate { txtObchod.Text = "Tesco"; };
-            btnKatKauf.Click += delegate { txtObchod.Text = "Kaufland"; };
-            btnKatJednota.Click += delegate { txtObchod.Text = "Jednota"; };
             btnKatJedlo.Click += delegate { txtKategoria.Text = "Jedlo"; };
             btnKatZabava.Click += delegate { txtKategoria.Text = "Zábava"; };
             btnKatOblecenie.Click += delegate { txtKategoria.Text = "Oblečenie"; };
             btnKatDoprava.Click += delegate { txtKategoria.Text = "Doprava"; };
 
+            //spinner dropdown view Obchod
+            obchodyObjList = ObchodServis.getInstance().GetNakupList();
+            var obchodyList = new List<String>();
+            for(int i = 0; i < obchodyObjList.Count; i++)
+            {
+                obchodyList.Add(obchodyObjList[i].obchodNazov);
+            }
+            var adapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleSpinnerItem, obchodyList);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            var spinner = FindViewById<Spinner>(Resource.Id.spnrObchod);
+            spinner.Adapter = adapter;
+
+            btnPotvrdObchod.Click += delegate {txtObchod.Text = spinner.SelectedItem.ToString();};
+            
 
             btnSave.Click += delegate
             {
                 if (txtObchod.Text == "")
                 {
-                    Toast.MakeText(this, "Názov obchodu nebol zadaný, prosím zadajte názov obchodu.", ToastLength.Long).Show();
-
+                    Toast.MakeText(this, "Názov obchodu nebol zadaný alebo potvrdený, prosím potvrdte obchod alebo zadajte iný názov obchodu.", ToastLength.Long).Show();
                 }
                 else if (txtVydaj.Text == "")
                 {
@@ -123,8 +129,9 @@ namespace ewallet_v0._1._13
                 else
                 {
                     ulozit();
-
+                    UlozObchod(obchodyList);
                     StartAuthenticatedActivity(typeof(NakupPrehlad));
+                    Finish();
                 }
 
 
@@ -140,6 +147,8 @@ namespace ewallet_v0._1._13
             rok = int.Parse(DateTime.Now.ToString("yyyy"));
 
         }
+
+
 
 #pragma warning disable CS0672 // Member overrides obsolete member
         protected override Dialog OnCreateDialog(int id)
@@ -208,6 +217,31 @@ namespace ewallet_v0._1._13
             NakupServis.getInstance().pridajNakup(nakup);
 
         }
+
+        public void UlozObchod(List<string> ObchodyList)
+        {
+            List<string> ObchodList = ObchodyList;
+            string obchod = txtObchod.Text;
+
+            bool podmienka = true;
+            for (int i = 0; i < ObchodList.Count; i++)
+            {
+                
+                if (String.Equals(ObchodList[i].ToUpper().TrimEnd(), obchod.ToUpper().TrimEnd()))
+                {
+                    podmienka = false;
+                    break;
+                }
+                
+            }
+            if (podmienka)
+            {
+                    Obchod obchodObj = new Obchod(obchod);
+                    ObchodServis.getInstance().pridajObchod(obchodObj);
+                    Toast.MakeText(this, "Obchod bol pridaný do zoznamu", ToastLength.Long).Show();
+            }
+        }
+
 
         public void StartAuthenticatedActivity(System.Type activityType)
         {

@@ -4,7 +4,9 @@
 	android:orientation="horizontal"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:padding="8dp">
+	android:padding="8dp"
+	android:background="#27afaf"
+	>
 
 	<TextView
 		android:text="Obchod"
@@ -14,7 +16,7 @@
 		android:minHeight="25px"
 		android:layout_weight="1"
 		android:id="@+id/txtObchodList"
-		android:textColor="#ff000000" />
+		style="@style/text_style"/>
 
 		<TextView
 		android:text="Kategória"
@@ -24,7 +26,8 @@
 		android:minHeight="25px"
 		android:layout_weight="1"
 		android:id="@+id/txtKatList"
-		android:textColor="#ff000000" />
+        style="@style/text_style"
+	    android:textColor="#b3e2e1" />
 
 	<LinearLayout
 		android:orientation="vertical"
@@ -39,13 +42,15 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/txtCenaList"
-			android:textColor="#ff000000" />
+		    style="@style/text_style"
+	        android:textColor="#b3e2e1" />
 		<TextView
 			android:text="Datum"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:id="@+id/txtDatumList"
-			android:textColor="#ff000000"
+			style="@style/text_style"
+			android:textColor="#b3e2e1"
 			android:paddingTop="4dp" />
 	</LinearLayout>
 

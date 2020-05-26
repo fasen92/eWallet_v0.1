@@ -3,7 +3,8 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent">
+	android:layout_height="match_parent"
+	android:background="#27afaf">
 	<TextView
 		android:text="Váš nákup bol uložený"
 		android:layout_width="match_parent"
@@ -13,7 +14,8 @@
 		android:id="@+id/txtOznam"
 		android:gravity="center"
 		android:textSize="30sp"
-		android:padding="30px" />
+		android:padding="30px" 
+		style="@style/text_style"/>
 	<TextView
 		android:text="Obchod: "
 		android:layout_width="match_parent"
@@ -21,7 +23,9 @@
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:id="@+id/txtObchodPrehlad"
-		android:textSize="25sp" />
+		android:textSize="25sp"
+		style="@style/text_style"
+	    android:textColor="#b3e2e1"/>
 	<TextView
 		android:text="Výdaj: "
 		android:layout_width="match_parent"
@@ -29,7 +33,9 @@
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:id="@+id/txtCenaPrehlad"
-		android:textSize="25sp" />
+		android:textSize="25sp"
+		style="@style/text_style"
+        android:textColor="#b3e2e1"/>
 
 	<TextView
 		android:text="Dátum: "
@@ -39,6 +45,8 @@
 		android:minHeight="25px"
 		android:id="@+id/txtDatumPrehlad"
 		android:textSize="25sp"
+		style="@style/text_style"
+		android:textColor="#b3e2e1"
 		/>	
 	<TextView
 		android:text="Kategória: "
@@ -48,7 +56,9 @@
 		android:minHeight="25px"
 		android:id="@+id/txtKatPrehlad"
 		android:textSize="25sp" 
-	android:paddingBottom="20px"/>
+		android:paddingBottom="20px"
+	    style="@style/text_style"
+	    android:textColor="#b3e2e1"/>
 	<TextView
 		android:text="Prosím vyberte ako chcete pokračovať"
 		android:layout_width="match_parent"
@@ -59,22 +69,29 @@
 		android:textSize="25sp" 
 		android:gravity="center"
 		android:paddingTop="100px"
-		android:paddingBottom="50px"/>
+		android:paddingBottom="50px"
+	    style="@style/text_style"/>
 	<Button
 		android:text="Nový Nákup"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/btnNovyNakup" />
+		android:id="@+id/btnNovyNakup"
+	    android:background="@drawable/button_style"
+		style="@style/button_text"/>
 	<Button
 		android:text="Grafy"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/btnGrafy" />
+		android:id="@+id/btnGrafy" 
+	    android:background="@drawable/button_style"
+	    style="@style/button_text"/>
 	<Button
 		android:text="Zoznam nákupov"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/btnNakupList" />
+		android:id="@+id/btnNakupList" 
+	    android:background="@drawable/button_style"
+	    style="@style/button_text"/>
 
 </LinearLayout>
 

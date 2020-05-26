@@ -3,19 +3,24 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-	android:padding="8dp">
+	android:padding="8dp"
+    android:background="#27afaf">
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/txtObchodDetail"
 		android:hint="Obchod"
-		android:textSize="24sp"/>
+		android:textSize="24sp"
+		android:textColorHint="#b3e2e1"
+	    style="@style/text_style"/>
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/txtKatDetail"
 		android:hint="Kategória"
-		android:textSize="24sp"/>
+		android:textSize="24sp"		
+		android:textColorHint="#b3e2e1"
+	    style="@style/text_style"/>
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -25,26 +30,36 @@
 		android:hint="Cena"
 		android:inputType="none|number|numberDecimal"
 		android:textSize="24sp"
-		android:numeric="decimal|integer"/>
+		android:numeric="decimal|integer"
+		android:textColorHint="#b3e2e1"
+	    style="@style/text_style"/>
 	<TextView
 		android:text="Text"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/txtDatumDetail"
-		android:textSize="24sp"/>
+		android:textSize="24sp"		
+		android:textColor="#b3e2e1"
+	    style="@style/text_style"/>
 	<Button
 		android:text="klikni pre zadanie dátumu"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/btnDatumDetail" />
+		android:id="@+id/btnDatumDetail"
+	    android:background="@drawable/button_style"
+	    style="@style/button_text"/>
 	<Button
 		android:text="Uložiť zmeny"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/btnSaveDetail" />
+		android:id="@+id/btnSaveDetail"
+	    android:background="@drawable/button_style"
+	    style="@style/button_text"/>
 	<Button
 		android:text="Vymazať záznam"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/btnDeleteDetail" />
+		android:id="@+id/btnDeleteDetail" 
+	    android:background="@drawable/button_style"
+	    style="@style/button_text"/>
 </LinearLayout>

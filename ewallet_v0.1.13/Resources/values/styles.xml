@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <resources>
 
     <!-- Base application theme. -->
@@ -12,7 +13,42 @@
       <item name="android:windowEnterAnimation">@anim/slide_up</item>
       <item name="android:windowExitAnimation">@anim/slide_right</item>
     </style>
-  
-  
+
+  <style name="button_text" >
+    <item name="android:layout_width" >fill_parent</item>
+    <item name="android:layout_height" >fill_parent</item>
+    <item name="android:textColor" >#19657f</item>
+    <item name="android:gravity" >center</item>
+    <item name="android:layout_margin" >1dp</item>
+    <item name="android:textSize" >16dp</item>
+    <item name="android:textStyle" >bold</item>
+    <item name="android:shadowColor" >#EFF4F7</item>
+    <item name="android:shadowDx" >1</item>
+    <item name="android:shadowDy" >1</item>
+    <item name="android:shadowRadius" >2</item>
+  </style>
+
+  <style name="button_text_grid" >
+    <item name="android:textColor" >#19657f</item>
+    <item name="android:gravity" >center</item>
+    <item name="android:layout_margin" >1dp</item>
+    <item name="android:textSize" >15dp</item>
+    <item name="android:textStyle" >bold</item>
+    <item name="android:shadowColor" >#EFF4F7</item>
+    <item name="android:shadowDx" >1</item>
+    <item name="android:shadowDy" >1</item>
+    <item name="android:shadowRadius" >2</item>
+  </style>
+
+  <style name="text_style">
+    <item name="android:textColor" >#f3da4a</item>
+    <item name="android:shadowColor" >#000000</item>
+    <item name="android:textStyle" >bold</item>
+    <item name="android:shadowDx" >2</item>
+    <item name="android:shadowDy" >2</item>
+    <item name="android:shadowRadius" >2</item>
+  </style>
+
+
 
 </resources>

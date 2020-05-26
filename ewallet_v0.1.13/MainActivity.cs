@@ -106,7 +106,7 @@ namespace ewallet_v0._1._13
             mesiacListKat = new List<Entry>();
             List<sumaNakupov> mesiacSumaKat = new List<sumaNakupov>();
             mesiacSumaKat = SumaMesiacKat(nakupList);
-            for (int i = 0; i < mesiacSuma.Count; i++)
+            for (int i = 0; i < mesiacSumaKat.Count; i++)
             {
                 var vstup = new Entry(Convert.ToSingle(mesiacSumaKat[i].vydajSumaNakup));
                 vstup.Label = mesiacSumaKat[i].obchodSumaNakup;
