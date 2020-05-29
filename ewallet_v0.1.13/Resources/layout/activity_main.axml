@@ -7,51 +7,155 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-		android:background="#27afaf">
+		android:background="#27afaf"		
+		android:padding="8dp">
 		<TextView
 		android:text="Posledných 7 dní"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/txtLast7"
 		android:textSize="24sp"		
-	    style="@style/text_style" />
-        <microcharts.droid.ChartView
-            android:id="@+id/chartViewLast7"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"/>
-		<microcharts.droid.ChartView
-            android:id="@+id/chartViewLast7kat"
-            android:layout_width="match_parent"
-            android:layout_height="160dp" />
+	    style="@style/text_style"
+		android:paddingBottom="5dp"/>
+		<TextView
+		android:text="Ľutujeme, ale za posledných 7 dní neevidujeme žiadny nákup"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtOznam7dni"
+		android:gravity="center"
+		android:textSize="20sp"
+		android:padding="30px"
+		android:textColor="#b3e2e1"
+		style="@style/text_style"/>
+		<LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="@drawable/layout_style"		
+		android:padding="2dp"
+		android:id="@+id/LnrLayLast7">
+			<microcharts.droid.ChartView
+				android:id="@+id/chartViewLast7"
+				android:layout_width="match_parent"
+				android:layout_height="180dp"
+				android:layout_margin="3dp"
+				style="@style/text_style"
+				/>
+		</LinearLayout>
+		<LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="@drawable/layout_style"		
+		android:padding="2dp"
+		android:layout_marginTop="10dp"
+		android:id="@+id/LnrLayLast7kat">
+			<microcharts.droid.ChartView
+				android:id="@+id/chartViewLast7kat"
+				android:layout_width="match_parent"
+				android:layout_height="180dp" 
+				android:layout_margin="3dp"/>
+		</LinearLayout>
 		<TextView
 		android:text="Týždeň"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/txtLast7"
 		android:textSize="24sp" 
-	    style="@style/text_style"/>
-		<microcharts.droid.ChartView
-            android:id="@+id/chartViewWeek"
-            android:layout_width="match_parent"
-            android:layout_height="160dp" />
-		<microcharts.droid.ChartView
-            android:id="@+id/chartViewWeekkat"
-            android:layout_width="match_parent"
-            android:layout_height="160dp" />
+	    style="@style/text_style"
+		android:paddingBottom="5dp"
+		android:paddingTop="5dp"/>
+		<TextView
+		android:text="Ľutujeme, ale za tento týždeň neevidujeme žiadny nákup"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtOznamTyzden"
+		android:gravity="center"
+		android:textSize="20sp"
+		android:padding="30px"
+		android:textColor="#b3e2e1"
+		style="@style/text_style"/>
+		<LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="@drawable/layout_style"		
+		android:padding="2dp"
+		android:id="@+id/LnrLayTyzden">
+			<microcharts.droid.ChartView
+				android:id="@+id/chartViewWeek"
+				android:layout_width="match_parent"
+				android:layout_height="180dp" 
+				android:layout_margin="3dp"/>
+		</LinearLayout>
+		<LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="@drawable/layout_style"		
+		android:padding="2dp"
+		android:layout_marginTop="10dp"
+		android:id="@+id/LnrLayTyzdenKat">
+			<microcharts.droid.ChartView
+				android:id="@+id/chartViewWeekkat"
+				android:layout_width="match_parent"
+				android:layout_height="180dp"
+				android:layout_margin="3dp"/>
+		</LinearLayout>
 		<TextView
 		android:text="Mesiac"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/txtLast7"
 		android:textSize="24sp"		
-	    style="@style/text_style" />
-		<microcharts.droid.ChartView
-            android:id="@+id/chartViewMonth"
-            android:layout_width="match_parent"
-            android:layout_height="160dp" />
-		<microcharts.droid.ChartView
-            android:id="@+id/chartViewMonthkat"
-            android:layout_width="match_parent"
-            android:layout_height="160dp" />
+	    style="@style/text_style"
+		android:paddingBottom="5dp"
+		android:paddingTop="5dp"
+		/>
+		<TextView
+		android:text="Ľutujeme, ale za tento mesiac neevidujeme žiadny nákup"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/txtOznamMesiac"
+		android:gravity="center"
+		android:textSize="20sp"
+		android:padding="30px"
+		android:textColor="#b3e2e1"
+		style="@style/text_style"/>
+		<LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="@drawable/layout_style"		
+		android:padding="2dp"
+		android:id="@+id/LnrLayMonth">
+			<microcharts.droid.ChartView
+				android:id="@+id/chartViewMonth"
+				android:layout_width="match_parent"
+				android:layout_height="180dp" 
+				android:layout_margin="3dp"/>
+		</LinearLayout>
+		<LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="@drawable/layout_style"		
+		android:padding="2dp"
+		android:layout_marginTop="10dp"
+		android:id="@+id/LnrLayMonthkat">
+			<microcharts.droid.ChartView
+				android:id="@+id/chartViewMonthkat"
+				android:layout_width="match_parent"
+				android:layout_height="180dp"
+				android:layout_margin="3dp"/>
+		</LinearLayout>
+		
+		
     </LinearLayout>
 </ScrollView>

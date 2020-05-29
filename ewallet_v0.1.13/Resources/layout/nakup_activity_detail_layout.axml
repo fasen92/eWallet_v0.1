@@ -12,7 +12,8 @@
 		android:hint="Obchod"
 		android:textSize="24sp"
 		android:textColorHint="#b3e2e1"
-	    style="@style/text_style"/>
+	    style="@style/text_style"
+	    android:paddingTop="20dp"/>
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -20,7 +21,8 @@
 		android:hint="Kategória"
 		android:textSize="24sp"		
 		android:textColorHint="#b3e2e1"
-	    style="@style/text_style"/>
+	    style="@style/text_style"
+	    android:paddingTop="20dp"/>
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -32,7 +34,8 @@
 		android:textSize="24sp"
 		android:numeric="decimal|integer"
 		android:textColorHint="#b3e2e1"
-	    style="@style/text_style"/>
+	    style="@style/text_style"
+	    android:paddingTop="20dp"/>
 	<TextView
 		android:text="Text"
 		android:layout_width="match_parent"
@@ -40,26 +43,33 @@
 		android:id="@+id/txtDatumDetail"
 		android:textSize="24sp"		
 		android:textColor="#b3e2e1"
-	    style="@style/text_style"/>
+	    style="@style/text_style"
+	    android:paddingTop="20dp"
+	    android:paddingBottom="70dp"/>
 	<Button
 		android:text="klikni pre zadanie dátumu"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_height="40dp"
 		android:id="@+id/btnDatumDetail"
 	    android:background="@drawable/button_style"
-	    style="@style/button_text"/>
+	    style="@style/button_text"
+	    android:layout_margin="5dp"
+	/>
 	<Button
 		android:text="Uložiť zmeny"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_height="40dp"
 		android:id="@+id/btnSaveDetail"
 	    android:background="@drawable/button_style"
-	    style="@style/button_text"/>
+	    style="@style/button_text"
+	    android:layout_margin="5dp"/>
 	<Button
 		android:text="Vymazať záznam"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_height="40dp"
 		android:id="@+id/btnDeleteDetail" 
 	    android:background="@drawable/button_style"
-	    style="@style/button_text"/>
+	    style="@style/button_text"
+		android:layout_margin="5dp"
+	/>
 </LinearLayout>

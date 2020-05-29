@@ -4,7 +4,8 @@
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="#27afaf">
+	android:background="#27afaf"
+	android:padding="8dp">
 	<TextView
 		android:text="Váš nákup bol uložený"
 		android:layout_width="match_parent"
@@ -74,25 +75,27 @@
 	<Button
 		android:text="Nový Nákup"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_height="40dp"
 		android:id="@+id/btnNovyNakup"
 	    android:background="@drawable/button_style"
-		style="@style/button_text"/>
+		style="@style/button_text"
+	    android:layout_margin="5dp"/>
 	<Button
 		android:text="Grafy"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_height="40dp"
 		android:id="@+id/btnGrafy" 
 	    android:background="@drawable/button_style"
-	    style="@style/button_text"/>
+	    style="@style/button_text"
+	    android:layout_margin="5dp"/>
 	<Button
 		android:text="Zoznam nákupov"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_height="40dp"
 		android:id="@+id/btnNakupList" 
 	    android:background="@drawable/button_style"
-	    style="@style/button_text"/>
-
+	    style="@style/button_text"
+	    android:layout_margin="5dp"/>
 </LinearLayout>
 
 

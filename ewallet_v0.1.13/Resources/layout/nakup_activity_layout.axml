@@ -23,10 +23,12 @@
 			android:paddingBottom="10dp"
 		    android:paddingTop="5dp"/>
 		<Spinner
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spnrObchod"
-		android:paddingBottom="10sp"/>
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/spnrObchod"
+			android:paddingBottom="10sp"
+			android:dropDownSelector="#27afaf"
+			style="@style/text_style"/>
 		<Button
 			android:text="potvrď obchod"
 			android:layout_width="match_parent"
@@ -155,6 +157,7 @@
 			android:textColorHint="#b3e2e1"
 			android:textSize="20sp"
 			style="@style/text_style"
+			android:paddingBottom="20dp"
 			/>
 		<Button
 			android:text="Uložiť nákup"
@@ -162,7 +165,8 @@
 			android:layout_height="40dp"
 			android:id="@+id/btnSave"
 			android:background="@drawable/button_style"
-			style="@style/button_text"/>
+			style="@style/button_text"
+		    android:layout_gravity="bottom"/>
 
 	</LinearLayout>
 </ScrollView>

@@ -6,6 +6,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
@@ -67,8 +68,6 @@ namespace ewallet_v0._1._13
             }
 
             
-
-
             btnDatum = FindViewById<Button>(Resource.Id.btnDatum);
             btnSave = FindViewById<Button>(Resource.Id.btnSave);
             txtObchod = FindViewById<EditText>(Resource.Id.txtObchod);
@@ -76,7 +75,6 @@ namespace ewallet_v0._1._13
             txtDatum = FindViewById<TextView>(Resource.Id.txtDatum);
             txtKategoria = FindViewById<EditText>(Resource.Id.txtKategoria);
             btnPotvrdObchod = FindViewById<Button>(Resource.Id.btnPotvrdObchod);
-            
             
             btnKatDoprava = FindViewById<Button>(Resource.Id.btnKatDoprava);
             btnKatJedlo = FindViewById<Button>(Resource.Id.btnKatJedlo);
@@ -107,6 +105,10 @@ namespace ewallet_v0._1._13
             var adapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleSpinnerItem, obchodyList);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             var spinner = FindViewById<Spinner>(Resource.Id.spnrObchod);
+
+            //vzhľad popup listu dorobiť
+            /*spinner.SetBackgroundColor(Color.ParseColor("#27afaf"));
+            spinner.SetPopupBackgroundDrawable()*/
             spinner.Adapter = adapter;
 
             btnPotvrdObchod.Click += delegate {txtObchod.Text = spinner.SelectedItem.ToString();};
@@ -147,8 +149,6 @@ namespace ewallet_v0._1._13
             rok = int.Parse(DateTime.Now.ToString("yyyy"));
 
         }
-
-
 
 #pragma warning disable CS0672 // Member overrides obsolete member
         protected override Dialog OnCreateDialog(int id)

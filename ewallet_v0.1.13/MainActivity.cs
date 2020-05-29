@@ -28,6 +28,16 @@ namespace ewallet_v0._1._13
         List<Nakup> nakupList;
         List<Entry> tyzdenDatumList;
         List<Entry> tyzdenDatumListKat;
+        TextView txtOznam7dni;
+        TextView txtOznamTyzden;
+        TextView txtOznamMesiac;
+        LinearLayout LnrLayTyzden;
+        LinearLayout LnrLayTyzdenKat;
+        LinearLayout LnrLayLast7;
+        LinearLayout LnrLayLast7Kat;
+        LinearLayout LnrLayMesiac;
+        LinearLayout LnrLayMesiacKat;
+
         
         String[] farby;
         public static void startActivity(Context context)
@@ -65,6 +75,19 @@ namespace ewallet_v0._1._13
 
             farby = new string[] { "#19152d", "#342a4c", "#424272", "#5c7677", "#7a9968", "#9abc51", "#b4cc49", "#e9ffbf" };
 
+            txtOznam7dni = FindViewById<TextView>(Resource.Id.txtOznam7dni);
+            txtOznam7dni.Visibility = Android.Views.ViewStates.Gone;
+            txtOznamTyzden = FindViewById<TextView>(Resource.Id.txtOznamTyzden);
+            txtOznamTyzden.Visibility = Android.Views.ViewStates.Gone;
+            txtOznamMesiac = FindViewById<TextView>(Resource.Id.txtOznamMesiac);
+            txtOznamMesiac.Visibility = Android.Views.ViewStates.Gone;
+
+            LnrLayTyzden = FindViewById<LinearLayout>(Resource.Id.LnrLayTyzden);
+            LnrLayTyzdenKat = FindViewById<LinearLayout>(Resource.Id.LnrLayTyzdenKat);
+            LnrLayLast7 = FindViewById<LinearLayout>(Resource.Id.LnrLayLast7);
+            LnrLayLast7Kat = FindViewById<LinearLayout>(Resource.Id.LnrLayLast7kat);
+            LnrLayMesiac = FindViewById<LinearLayout>(Resource.Id.LnrLayMonth);
+            LnrLayMesiacKat = FindViewById<LinearLayout>(Resource.Id.LnrLayMonthkat);
 
             tyzdenList = new List<Entry>();
             List<sumaNakupov> tyzdenSuma = new List<sumaNakupov>();
@@ -77,6 +100,8 @@ namespace ewallet_v0._1._13
                 vstup.Color = SKColor.Parse(farby[i]);
                 tyzdenList.Add(vstup);
             }
+
+           
 
             tyzdenListKat = new List<Entry>();
             List<sumaNakupov> tyzdenSumaKat = new List<sumaNakupov>();
@@ -139,25 +164,56 @@ namespace ewallet_v0._1._13
                 tyzdenDatumListKat.Add(vstup);
             }
 
-            var chartlast7 = new DonutChart() { Entries = tyzdenList };
-            var chartlast7kat = new DonutChart() { Entries = tyzdenListKat };
-            var chartWeek = new DonutChart() { Entries =  tyzdenDatumList};
-            var chartWeekkat = new DonutChart() { Entries = tyzdenDatumListKat };
-            var chartMonth = new DonutChart() { Entries =  mesiacList};
-            var chartMonthkat = new DonutChart() { Entries = mesiacListKat };
+            var chartlast7 = new DonutChart() { Entries = tyzdenList, LabelTextSize=30f };
+            var chartlast7kat = new DonutChart() { Entries = tyzdenListKat, LabelTextSize = 30f };
+            var chartWeek = new DonutChart() { Entries =  tyzdenDatumList, LabelTextSize = 30f };
+            var chartWeekkat = new DonutChart() { Entries = tyzdenDatumListKat, LabelTextSize = 30f };
+            var chartMonth = new DonutChart() { Entries =  mesiacList, LabelTextSize = 30f };
+            var chartMonthkat = new DonutChart() { Entries = mesiacListKat, LabelTextSize = 30f };
 
-            var chartViewLast7 = FindViewById<ChartView>(Resource.Id.chartViewLast7);
-            chartViewLast7.Chart = chartlast7;
-            var chartViewLast7kat = FindViewById<ChartView>(Resource.Id.chartViewLast7kat);
-            chartViewLast7kat.Chart = chartlast7kat;
-            var chartViewWeek= FindViewById<ChartView>(Resource.Id.chartViewWeek);
-            chartViewWeek.Chart = chartWeek;
-            var chartViewWeekkat = FindViewById<ChartView>(Resource.Id.chartViewWeekkat);
-            chartViewWeekkat.Chart = chartWeekkat;
-            var chartViewMonth = FindViewById<ChartView>(Resource.Id.chartViewMonth);
-            chartViewMonth.Chart = chartMonth;
-            var chartViewMonthkat = FindViewById<ChartView>(Resource.Id.chartViewMonthkat);
-            chartViewMonthkat.Chart = chartMonthkat;
+            //ošetrenie starých nákupov
+            if (tyzdenSuma.Count != 0)
+            {
+                var chartViewLast7 = FindViewById<ChartView>(Resource.Id.chartViewLast7);
+                chartViewLast7.Chart = chartlast7;
+                var chartViewLast7kat = FindViewById<ChartView>(Resource.Id.chartViewLast7kat);
+                chartViewLast7kat.Chart = chartlast7kat;
+            }
+            else
+            {
+                txtOznam7dni.Visibility = Android.Views.ViewStates.Visible;
+                LnrLayLast7.Visibility = Android.Views.ViewStates.Gone;
+                LnrLayLast7Kat.Visibility = Android.Views.ViewStates.Gone;
+            }
+
+            if (tyzdenDatumSuma.Count != 0)
+            {
+                var chartViewWeek= FindViewById<ChartView>(Resource.Id.chartViewWeek);
+                chartViewWeek.Chart = chartWeek;
+                var chartViewWeekkat = FindViewById<ChartView>(Resource.Id.chartViewWeekkat);
+                chartViewWeekkat.Chart = chartWeekkat;
+            }
+            else
+            {
+                txtOznamTyzden.Visibility = Android.Views.ViewStates.Visible;
+                LnrLayTyzden.Visibility = Android.Views.ViewStates.Gone;
+                LnrLayTyzdenKat.Visibility = Android.Views.ViewStates.Gone;
+            }
+               
+            if(mesiacSuma.Count != 0)
+            {
+                var chartViewMonth = FindViewById<ChartView>(Resource.Id.chartViewMonth);
+                chartViewMonth.Chart = chartMonth;
+                var chartViewMonthkat = FindViewById<ChartView>(Resource.Id.chartViewMonthkat);
+                chartViewMonthkat.Chart = chartMonthkat;
+            }
+            else
+            {
+                txtOznamMesiac.Visibility = Android.Views.ViewStates.Visible;
+                LnrLayMesiac.Visibility = Android.Views.ViewStates.Gone;
+                LnrLayMesiacKat.Visibility = Android.Views.ViewStates.Gone;
+            }
+            
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
