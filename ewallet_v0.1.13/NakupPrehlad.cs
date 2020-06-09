@@ -64,16 +64,19 @@ namespace ewallet_v0._1._13
             btnGrafy.Click += delegate
             {
                 MainActivity.startActivity(this);
+                Finish();
             };
 
             btnNakupList.Click += delegate
             {
                 NakupListActivity.StartActivity(this);
+                Finish();
             };
 
             btnNovyNakup.Click += delegate
             {
                 NakupActivity.startActivity(this);
+                Finish();
             };
         }
     }

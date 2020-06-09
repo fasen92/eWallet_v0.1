@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="#27afaf">
+
+	<LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="@drawable/layout_style"
+		android:padding="15dp"
+		android:layout_marginTop="100dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp"
+		android:layout_marginBottom="10dp">
+		<TextView
+		android:text="Táto aplikácia vznikla ako ročníkový projekt."
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textSize="20dp"
+		android:id="@+id/textView1"
+		style="@style/text_style"
+		android:textColor="#19657f"
+		android:textAlignment="center"/>
+		<TextView
+			android:text="Ivan Mahút"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/textView2"
+		    style="@style/text_style"
+		    android:textColor="#19657f"
+		    android:textSize="20dp"
+		    android:textAlignment="center"/>
+		<TextView
+			android:text="3. ročník"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/textView3"
+		    style="@style/text_style"
+		    android:textColor="#19657f"
+		    android:textSize="20dp"
+		    android:textAlignment="center"/>
+		<TextView
+			android:text="Stredná priemyselná škola Jozefa Murgaša"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/textView4"
+		    style="@style/text_style"
+		    android:textColor="#19657f"
+		    android:textSize="20dp"
+			android:textAlignment="center"/>
+	</LinearLayout>
+
+
+</LinearLayout>

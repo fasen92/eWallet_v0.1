@@ -16,7 +16,7 @@ using ewallet_v0._1._13.Servis;
 
 namespace ewallet_v0._1._13
 {
-    [Activity(Label = "NakupDetailActivity")]
+    [Activity(Label = "Detail Nákupu")]
     public class NakupDetailActivity : AppCompatActivity, DatePickerDialog.IOnDateSetListener
     {
         private static readonly string ID_NAKUP = "ID_NAKUP";
