@@ -18,7 +18,7 @@ namespace ewallet_v0._1._13
     {
         public static void startActivity(Context context)
         {
-            Intent intent = new Intent(context, typeof(NakupActivity));
+            Intent intent = new Intent(context, typeof(InfoActivity));
             context.StartActivity(intent);
         }
 

@@ -59,7 +59,9 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ForgorPasswordActivity.cs" />
     <Compile Include="InfoActivity.cs" />
+    <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Model\Nakup.cs" />
     <Compile Include="Model\Obchod.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servis\NakupServis.cs" />
     <Compile Include="Servis\ObchodServis.cs" />
+    <Compile Include="SignUpActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -124,6 +127,9 @@
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
       <Version>28.0.0.3</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Auth">
+      <Version>60.1142.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\menu.xml" />
@@ -170,6 +176,21 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\info_activity_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\login_activity_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\sign_up_activity_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ucet_activity_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

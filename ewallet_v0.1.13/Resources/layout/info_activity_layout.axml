@@ -34,7 +34,7 @@
 		    android:textSize="20dp"
 		    android:textAlignment="center"/>
 		<TextView
-			android:text="3. ročník"
+			android:text="4. ročník"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/textView3"
