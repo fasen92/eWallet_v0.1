@@ -57,7 +57,7 @@ namespace ewallet_v0._1._13
             auth = FirebaseAuth.GetInstance(LoginActivity.app);
 
             btnSignup = FindViewById<Button>(Resource.Id.signup_btn_register);
-            btnLogin = FindViewById<Button>(Resource.Id.signup_btn_login);
+            btnLogin = FindViewById<TextView>(Resource.Id.signup_btn_login);
             btnForgotPass = FindViewById<TextView>(Resource.Id.signup_btn_forgot_password);
             input_email = FindViewById<EditText>(Resource.Id.signup_email);
             input_pass = FindViewById<EditText>(Resource.Id.signup_password);
@@ -75,6 +75,8 @@ namespace ewallet_v0._1._13
             {
                 Snackbar snackbar = Snackbar.Make(activity_sign_up, "Registrácia bola úspešná", Snackbar.LengthShort);
                 snackbar.Show();
+                StartActivity(new Intent(this, typeof(LoginActivity)));
+                Finish();
             }
             else
             {

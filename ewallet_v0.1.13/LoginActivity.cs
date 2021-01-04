@@ -18,7 +18,7 @@ using static Android.Views.View;
 
 namespace ewallet_v0._1._13
 {
-    [Activity(Label = "LoginActivity")]
+    [Activity(Label = "LoginActivity", MainLauncher = true)]
     public class LoginActivity : AppCompatActivity,IOnClickListener, IOnCompleteListener
     {
         Button btnLogin;
@@ -92,7 +92,6 @@ namespace ewallet_v0._1._13
             if (task.IsSuccessful)
             {
                 MainActivity.startActivity(this);
-                Finish();
             }
             else
             {

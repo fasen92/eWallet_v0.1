@@ -75,6 +75,7 @@
     <Compile Include="Servis\NakupServis.cs" />
     <Compile Include="Servis\ObchodServis.cs" />
     <Compile Include="SignUpActivity.cs" />
+    <Compile Include="UcetActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -191,6 +192,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\ucet_activity_layout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\forgot_password_activity_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

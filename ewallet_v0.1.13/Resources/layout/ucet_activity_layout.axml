@@ -35,7 +35,7 @@
         style="@style/button_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-		android:layout_margin="5"
+		android:layout_margin="5dp"
 		/>
     <Button
         android:layout_below="@+id/dashboard_btn_change_pass"
@@ -45,6 +45,6 @@
         style="@style/button_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-		android:layout_margin="5"/>
+		android:layout_margin="5dp"/>
 </RelativeLayout>
-© 2020 GitHub, Inc.
+

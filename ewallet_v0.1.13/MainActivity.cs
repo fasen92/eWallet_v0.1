@@ -18,7 +18,7 @@ using System.Linq;
 
 namespace ewallet_v0._1._13
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", Icon = "@drawable/icon")]
     public class MainActivity : AppCompatActivity
     {
         List<Entry> tyzdenList;
@@ -236,7 +236,11 @@ namespace ewallet_v0._1._13
                 case Resource.Id.zoznamNakupov:
                     NakupListActivity.StartActivity(this);
                     return true;
+                case Resource.Id.ucet:
+                    UcetActivity.startActivity(this);
+                    return true;
                 case Resource.Id.info:
+                    InfoActivity.startActivity(this);
                     return true;
             }
             return base.OnOptionsItemSelected(item);
