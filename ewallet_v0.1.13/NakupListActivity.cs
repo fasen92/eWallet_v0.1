@@ -49,7 +49,7 @@ namespace ewallet_v0._1._13
         {
             base.OnResume();
             // táto metóda vynúti prekreslenie celého listview
-            // na tomto mieste je to pre prípad, že sa do aktivity vrátime z aktivity na editáciu, alebo vytvorenie novej otázky
+            // na tomto mieste je to pre prípad, že sa do aktivity vrátime z aktivity na editáciu
             adapter.NotifyDataSetChanged();
         }
 

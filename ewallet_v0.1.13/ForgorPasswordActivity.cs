@@ -17,7 +17,7 @@ using static Android.Views.View;
 
 namespace ewallet_v0._1._13
 {
-    [Activity(Label = "ForgorPasswordActivity")]
+    [Activity(Label = "Obnova hesla")]
     public class ForgorPasswordActivity : AppCompatActivity, IOnClickListener, IOnCompleteListener
     {
         private EditText input_email;
@@ -35,11 +35,11 @@ namespace ewallet_v0._1._13
                 Finish();
             }else if (v.Id == Resource.Id.forgot_btn_reset)
             {
-                ResetPasswprd(input_email.Text);
+                ResetPassword(input_email.Text);
             }
         }
 
-        private void ResetPasswprd(string email)
+        private void ResetPassword(string email)
         {
             auth.SendPasswordResetEmail(email)
                 .AddOnCompleteListener(this, this);

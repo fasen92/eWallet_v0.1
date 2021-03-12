@@ -101,8 +101,6 @@ namespace ewallet_v0._1._13
                 tyzdenList.Add(vstup);
             }
 
-           
-
             tyzdenListKat = new List<Entry>();
             List<sumaNakupov> tyzdenSumaKat = new List<sumaNakupov>();
             tyzdenSumaKat = SumaTyzdenKat(nakupList);
@@ -114,7 +112,6 @@ namespace ewallet_v0._1._13
                 vstup.Color = SKColor.Parse(farby[i]);
                 tyzdenListKat.Add(vstup);
             }
-
 
             mesiacList = new List<Entry>();
             List<sumaNakupov> mesiacSuma = new List<sumaNakupov>();

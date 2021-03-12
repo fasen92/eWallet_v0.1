@@ -18,7 +18,7 @@ using static Android.Views.View;
 
 namespace ewallet_v0._1._13
 {
-    [Activity(Label = "LoginActivity", MainLauncher = true)]
+    [Activity(Label = "eWallet", MainLauncher = true)]
     public class LoginActivity : AppCompatActivity,IOnClickListener, IOnCompleteListener
     {
         Button btnLogin;

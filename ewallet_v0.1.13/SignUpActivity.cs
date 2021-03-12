@@ -17,7 +17,7 @@ using static Android.Views.View;
 
 namespace ewallet_v0._1._13
 {
-    [Activity(Label = "SignUpActivity")]
+    [Activity(Label = "Registrácia")]
     public class SignUpActivity : AppCompatActivity,IOnClickListener, IOnCompleteListener
     {
         Button btnSignup;

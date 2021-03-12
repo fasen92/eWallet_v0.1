@@ -17,7 +17,7 @@ using static Android.Views.View;
 
 namespace ewallet_v0._1._13
 {
-    [Activity(Label = "UcetActivity")]
+    [Activity(Label = "Účet")]
     public class UcetActivity : AppCompatActivity, IOnClickListener, IOnCompleteListener 
     {
         TextView txtWelcome;

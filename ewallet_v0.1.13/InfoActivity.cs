@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace ewallet_v0._1._13
 {
-    [Activity(Label = "InfoActivity")]
+    [Activity(Label = "Info o eWallet")]
     public class InfoActivity : AppCompatActivity
     {
         public static void startActivity(Context context)

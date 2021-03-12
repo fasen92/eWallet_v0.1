@@ -15,7 +15,7 @@ using ewallet_v0._1._13.Model;
 
 namespace ewallet_v0._1._13
 {
-    [Activity(Label = "Nakup prehľad")]
+    [Activity(Label = "Prehľad nákupu")]
     class NakupPrehlad : AppCompatActivity
     {
         TextView txtObchod;

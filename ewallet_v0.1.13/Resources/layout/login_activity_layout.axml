@@ -36,7 +36,7 @@
     <Button
         android:layout_below="@+id/login_input_password"
         android:id="@+id/login_btn_login"
-        android:text="Login"
+        android:text="Prihlásiť sa"
         android:background="@drawable/button_style"
         style="@style/button_text"
         android:layout_width="match_parent"

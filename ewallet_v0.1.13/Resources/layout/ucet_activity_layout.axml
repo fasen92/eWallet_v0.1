@@ -21,7 +21,7 @@
         android:layout_height="wrap_content">
         <EditText
             android:id="@+id/dashboard_newpassword"
-            android:hint="Enter new password"
+            android:hint="Zadaj nové heslo"
             android:inputType="textPassword"
             android:maxLines="1"
             android:layout_width="match_parent"
@@ -30,7 +30,7 @@
     <Button
         android:layout_below="@+id/dashboard_input_newpassword"
         android:id="@+id/dashboard_btn_change_pass"
-        android:text="Change Password"
+        android:text="Zmeň heslo"
         android:background="@drawable/button_style"
         style="@style/button_text"
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
     <Button
         android:layout_below="@+id/dashboard_btn_change_pass"
         android:id="@+id/dashboard_btn_logout"
-        android:text="Logout"
+        android:text="odhlásiť"
         android:background="@drawable/button_style"
         style="@style/button_text"
         android:layout_width="match_parent"
